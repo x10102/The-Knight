@@ -4,7 +4,7 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/Users/oliversmitek/Desktop/Programovani/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "/Users/oliversmitek/Desktop/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:16 (project)"
     message: |
       The system is: Darwin - 24.1.0 - arm64

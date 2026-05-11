@@ -13,15 +13,22 @@
 
 class TextureManager {
 
-  public:
+    TextureManager();
 
+
+
+public:
+    static TextureManager& getInstance(){
+        static TextureManager theInstance;
+        return theInstance;
+    }
 
     std::unordered_map<std::string, sf::Texture> textures; //obsahuje všechny textury hry
+    std::unordered_map<std::string, int> numOfFramesTextures; //obsahuje všechny textury hry
 
-
-    TextureManager();
     void setTexture(std::string nameOfTexture, sf::Sprite* spriteToInsertTo);
 
+    sf::Texture getTextureFromEntity(std::string nameOfTexture);
 };
 
 

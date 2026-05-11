@@ -23,8 +23,8 @@ FetchContent_MakeAvailable(SFML)
 
 # Přidání spustitelného souboru
 add_executable(untitled46 main.cpp
-        Managers/TextureManager.cpp
         Managers/TextureManager.h
+        Managers/TextureManager.cpp
         Managers/EntityManager.cpp
         Managers/EntityManager.h
         Managers/SpriteManager.cpp
@@ -33,11 +33,32 @@ add_executable(untitled46 main.cpp
         Insertors/InsertEntity.h
         Entities/Entity.h
         Entities/Entity.cpp
-        Entities/Player.h
-        Entities/Player.cpp
+        Entities/Player/Player.h
+        Entities/Player/Player.cpp
+        Entities/particle/BloodSplash.cpp
+        Entities/particle/BloodSplash.h
         Managers/SpawnManager.h
         Managers/SpawnManager.cpp
-
+        Managers/EnvironmenAndPhysicsManager.h
+        Managers/EnvironmenAndPhysicsManager.cpp
+        Managers/BackGroundManager.cpp
+        Managers/BackGroundManager.h
+        Entities/Enemies/HellHound.cpp
+        Entities/Enemies/HellHound.h
+        UIdirectory/UIManager.cpp
+        UIdirectory/UIManager.h
+        UIdirectory/UI/PlayerUIHP.cpp
+        UIdirectory/UI/PlayerUIHP.h
+        Managers/SpawnManager.h
+        Managers/SpawnManager.cpp
+        Managers/ParticalManager.cpp
+        Managers/ParticalManager.h
+        Entities/particle/HellHoundGore/HellHoundGore.cpp
+        Entities/particle/HellHoundGore/HellHoundGore.h
+        Entities/Envirament/platform.cpp
+        Entities/Envirament/platform.h
+        Managers/DrawManager.cpp
+        Managers/DrawManager.h
 )
 
 # Linkování SFML

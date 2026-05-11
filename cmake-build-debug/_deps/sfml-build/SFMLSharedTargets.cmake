@@ -89,7 +89,7 @@ set_target_properties(sfml-graphics PROPERTIES
 add_library(Freetype INTERFACE IMPORTED)
 
 set_target_properties(Freetype PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2"
+  INTERFACE_INCLUDE_DIRECTORIES "/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2;/opt/homebrew/include/freetype2"
   INTERFACE_LINK_LIBRARIES "/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks/freetype.framework"
 )
 

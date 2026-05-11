@@ -91,15 +91,85 @@ build CMakeFiles/untitled46.dir/Entities/Entity.cpp.o: CXX_COMPILER__untitled46_
   OBJECT_DIR = CMakeFiles/untitled46.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Entities
 
-build CMakeFiles/untitled46.dir/Entities/Player.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Entities/Player.cpp || cmake_object_order_depends_target_untitled46
-  DEP_FILE = CMakeFiles/untitled46.dir/Entities/Player.cpp.o.d
+build CMakeFiles/untitled46.dir/Entities/Player/Player.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Entities/Player/Player.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Entities/Player/Player.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
   INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
   OBJECT_DIR = CMakeFiles/untitled46.dir
-  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Entities
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Entities/Player
+
+build CMakeFiles/untitled46.dir/Entities/particle/BloodSplash.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Entities/particle/BloodSplash.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Entities/particle/BloodSplash.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Entities/particle
 
 build CMakeFiles/untitled46.dir/Managers/SpawnManager.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Managers/SpawnManager.cpp || cmake_object_order_depends_target_untitled46
   DEP_FILE = CMakeFiles/untitled46.dir/Managers/SpawnManager.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Managers
+
+build CMakeFiles/untitled46.dir/Managers/EnvironmenAndPhysicsManager.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Managers/EnvironmenAndPhysicsManager.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Managers/EnvironmenAndPhysicsManager.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Managers
+
+build CMakeFiles/untitled46.dir/Managers/BackGroundManager.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Managers/BackGroundManager.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Managers/BackGroundManager.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Managers
+
+build CMakeFiles/untitled46.dir/Entities/Enemies/HellHound.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Entities/Enemies/HellHound.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Entities/Enemies/HellHound.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Entities/Enemies
+
+build CMakeFiles/untitled46.dir/UIdirectory/UIManager.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/UIdirectory/UIManager.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/UIdirectory/UIManager.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/UIdirectory
+
+build CMakeFiles/untitled46.dir/UIdirectory/UI/PlayerUIHP.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/UIdirectory/UI/PlayerUIHP.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/UIdirectory/UI/PlayerUIHP.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/UIdirectory/UI
+
+build CMakeFiles/untitled46.dir/Managers/ParticalManager.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Managers/ParticalManager.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Managers/ParticalManager.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Managers
+
+build CMakeFiles/untitled46.dir/Entities/particle/HellHoundGore/HellHoundGore.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Entities/particle/HellHoundGore/HellHoundGore.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Entities/particle/HellHoundGore/HellHoundGore.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Entities/particle/HellHoundGore
+
+build CMakeFiles/untitled46.dir/Entities/Envirament/platform.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Entities/Envirament/platform.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Entities/Envirament/platform.cpp.o.d
+  FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
+  INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
+  OBJECT_DIR = CMakeFiles/untitled46.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled46.dir/Entities/Envirament
+
+build CMakeFiles/untitled46.dir/Managers/DrawManager.cpp.o: CXX_COMPILER__untitled46_unscanned_Debug /Users/oliversmitek/CLionProjects/untitled46/Managers/DrawManager.cpp || cmake_object_order_depends_target_untitled46
+  DEP_FILE = CMakeFiles/untitled46.dir/Managers/DrawManager.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fcolor-diagnostics
   INCLUDES = -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include
   OBJECT_DIR = CMakeFiles/untitled46.dir
@@ -113,7 +183,7 @@ build CMakeFiles/untitled46.dir/Managers/SpawnManager.cpp.o: CXX_COMPILER__untit
 #############################################
 # Link the executable bin/untitled46
 
-build bin/untitled46: CXX_EXECUTABLE_LINKER__untitled46_Debug CMakeFiles/untitled46.dir/main.cpp.o CMakeFiles/untitled46.dir/Managers/TextureManager.cpp.o CMakeFiles/untitled46.dir/Managers/EntityManager.cpp.o CMakeFiles/untitled46.dir/Managers/SpriteManager.cpp.o CMakeFiles/untitled46.dir/Insertors/InsertEntity.cpp.o CMakeFiles/untitled46.dir/Entities/Entity.cpp.o CMakeFiles/untitled46.dir/Entities/Player.cpp.o CMakeFiles/untitled46.dir/Managers/SpawnManager.cpp.o | _deps/sfml-build/lib/libsfml-graphics-d.2.6.1.dylib _deps/sfml-build/lib/libsfml-window-d.2.6.1.dylib _deps/sfml-build/lib/libsfml-system-d.2.6.1.dylib || _deps/sfml-build/lib/libsfml-graphics-d.dylib _deps/sfml-build/lib/libsfml-system-d.dylib _deps/sfml-build/lib/libsfml-window-d.dylib _deps/sfml-build/lib/libsfml-graphics-d.dylib _deps/sfml-build/lib/libsfml-window-d.dylib _deps/sfml-build/lib/libsfml-system-d.dylib
+build bin/untitled46: CXX_EXECUTABLE_LINKER__untitled46_Debug CMakeFiles/untitled46.dir/main.cpp.o CMakeFiles/untitled46.dir/Managers/TextureManager.cpp.o CMakeFiles/untitled46.dir/Managers/EntityManager.cpp.o CMakeFiles/untitled46.dir/Managers/SpriteManager.cpp.o CMakeFiles/untitled46.dir/Insertors/InsertEntity.cpp.o CMakeFiles/untitled46.dir/Entities/Entity.cpp.o CMakeFiles/untitled46.dir/Entities/Player/Player.cpp.o CMakeFiles/untitled46.dir/Entities/particle/BloodSplash.cpp.o CMakeFiles/untitled46.dir/Managers/SpawnManager.cpp.o CMakeFiles/untitled46.dir/Managers/EnvironmenAndPhysicsManager.cpp.o CMakeFiles/untitled46.dir/Managers/BackGroundManager.cpp.o CMakeFiles/untitled46.dir/Entities/Enemies/HellHound.cpp.o CMakeFiles/untitled46.dir/UIdirectory/UIManager.cpp.o CMakeFiles/untitled46.dir/UIdirectory/UI/PlayerUIHP.cpp.o CMakeFiles/untitled46.dir/Managers/ParticalManager.cpp.o CMakeFiles/untitled46.dir/Entities/particle/HellHoundGore/HellHoundGore.cpp.o CMakeFiles/untitled46.dir/Entities/Envirament/platform.cpp.o CMakeFiles/untitled46.dir/Managers/DrawManager.cpp.o | _deps/sfml-build/lib/libsfml-graphics-d.2.6.1.dylib _deps/sfml-build/lib/libsfml-window-d.2.6.1.dylib _deps/sfml-build/lib/libsfml-system-d.2.6.1.dylib || _deps/sfml-build/lib/libsfml-graphics-d.dylib _deps/sfml-build/lib/libsfml-system-d.dylib _deps/sfml-build/lib/libsfml-window-d.dylib _deps/sfml-build/lib/libsfml-graphics-d.dylib _deps/sfml-build/lib/libsfml-window-d.dylib _deps/sfml-build/lib/libsfml-system-d.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1
   LINK_LIBRARIES = -Wl,-rpath,/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-build/lib  _deps/sfml-build/lib/libsfml-graphics-d.2.6.1.dylib  _deps/sfml-build/lib/libsfml-window-d.2.6.1.dylib  _deps/sfml-build/lib/libsfml-system-d.2.6.1.dylib
   OBJECT_DIR = CMakeFiles/untitled46.dir
@@ -1349,7 +1419,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/BlendMode.
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/BlendMode.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1357,7 +1427,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Color.cpp.
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Color.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1365,7 +1435,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Font.cpp.o
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Font.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1373,7 +1443,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Glsl.cpp.o
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Glsl.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1381,7 +1451,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLCheck.cp
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLCheck.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1389,7 +1459,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLExtensio
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLExtensions.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1397,7 +1467,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Image.cpp.
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Image.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1405,7 +1475,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ImageLoade
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ImageLoader.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1413,7 +1483,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderStat
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderStates.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1421,7 +1491,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderText
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTexture.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1429,7 +1499,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTarg
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTarget.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1437,7 +1507,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderWind
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderWindow.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1445,7 +1515,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shader.cpp
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shader.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1453,7 +1523,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Texture.cp
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Texture.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1461,7 +1531,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSav
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1469,7 +1539,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transform.
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transform.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1477,7 +1547,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transforma
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transformable.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1485,7 +1555,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/View.cpp.o
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/View.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1493,7 +1563,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Vertex.cpp
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Vertex.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1501,7 +1571,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shape.cpp.
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shape.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1509,7 +1579,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/CircleShap
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/CircleShape.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1517,7 +1587,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RectangleS
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RectangleShape.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1525,7 +1595,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ConvexShap
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ConvexShape.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1533,7 +1603,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Sprite.cpp
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Sprite.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1541,7 +1611,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Text.cpp.o
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Text.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1549,7 +1619,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexArra
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexArray.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1557,7 +1627,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuff
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1565,7 +1635,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderText
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImpl.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1573,7 +1643,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderText
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImplFBO.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
@@ -1581,7 +1651,7 @@ build _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderText
   DEFINES = -DSFML_GRAPHICS_EXPORTS -DSTBI_FAILURE_USERMSG
   DEP_FILE = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImplDefault.cpp.o.d
   FLAGS = -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=15.1 -fPIC -fcolor-diagnostics -F/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks  -fvisibility=hidden  -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wdouble-promotion -Wformat=2 -Wnull-dereference -Wold-style-cast -Wpedantic -Wno-unknown-warning-option
-  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+  INCLUDES = -I/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/src -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/stb_image -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/glad/include -isystem /Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2 -isystem /opt/homebrew/include/freetype2
   OBJECT_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
   OBJECT_FILE_DIR = _deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 

@@ -345,7 +345,7 @@ FLAC_INCLUDE_DIR:PATH=/Users/oliversmitek/CLionProjects/untitled46/cmake-build-d
 FLAC_LIBRARY:FILEPATH=/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/libs-osx/Frameworks/FLAC.framework
 
 //Path to a file.
-FREETYPE_INCLUDE_DIR_freetype2:PATH=/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
+FREETYPE_INCLUDE_DIR_freetype2:PATH=/opt/homebrew/include/freetype2
 
 //Path to a file.
 FREETYPE_INCLUDE_DIR_ft2build:PATH=/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug/_deps/sfml-src/extlibs/headers/freetype2
@@ -460,15 +460,6 @@ sfml-system_LIB_DEPENDS:STATIC=general;pthread;
 
 //Dependencies for the target
 sfml-window_LIB_DEPENDS:STATIC=general;sfml-system;general;-framework Foundation;general;-framework AppKit;general;-framework IOKit;general;-framework Carbon;
-
-//Value Computed by CMake
-untitled44_BINARY_DIR:STATIC=/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug
-
-//Value Computed by CMake
-untitled44_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-untitled44_SOURCE_DIR:STATIC=/Users/oliversmitek/CLionProjects/untitled46
 
 //Value Computed by CMake
 untitled46_BINARY_DIR:STATIC=/Users/oliversmitek/CLionProjects/untitled46/cmake-build-debug
