@@ -24,13 +24,14 @@ class Player : public Entity {
 public:
 
 
-        bool isOnCornerOfTheMan = true; //corner bool
+
 
         bool cancalJump = false;
     bool isSliding = false;
 
         Player(sf::Vector2f position,sf::Vector2f velocity);
         void drawHitbox(sf::RenderWindow &window) override;
+        void drawAdditions(sf::RenderWindow &window) override;
         void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
         void input();
         void cooldowns_and_unIntraptebulActions() override;

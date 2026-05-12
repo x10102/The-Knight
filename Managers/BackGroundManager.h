@@ -1,26 +1,43 @@
 #ifndef BACKGROUNDMANAGER_H
 #define BACKGROUNDMANAGER_H
 
+#include <iostream>
+#include <ostream>
+#include <__ranges/rend.h>
+
 #include "EntityManager.h"
 #include "SFML/Graphics/Sprite.hpp"
 #include "../Managers/SpriteManager.h"
 #include "../Managers/TextureManager.h"
 #include "SFML/Graphics/RenderWindow.hpp"
 
+class BackGroundManager;
+static BackGroundManager *instance;
+
 class BackGroundManager {
 public:
-
   // Pointery na singletony
   EntityManager* entityManager;
   SpriteManager* spriteManager;
 
   BackGroundManager();
 
+  static BackGroundManager& getInstance(){
+    if (instance == nullptr) {
+      instance = new BackGroundManager();
+    }
+    return *instance;
+  }
+
+  void logicOfBackground(sf::RenderWindow& window);
   void drawBackground(sf::RenderWindow& window);
 
-  std::map<std::string, sf::Sprite*> mapOfBackGrounds;
+  void chackCameraCorner(sf::Vector2f veloc);
 
-private:
+  float positionXOfPlayer = 0.f;
+  float positionYOfPlayer = 0.f;
+
+public:
   // Pozice a vzdálenosti
   float backgroundCloudsDist = 0.f;
   float backgroundTownDist = 0.f;
@@ -29,8 +46,6 @@ private:
   float backgroundHouse1Dist = 0.f;
   float floorDist = 0.f;
 
-  float positionXOfPlayer = 0.f;
-  float positionYOfPlayer = 0.f;
 
   float velocityOfPlayerX = 0.f;
 

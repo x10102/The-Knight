@@ -10,6 +10,7 @@
 #include "../Entities/Entity.h"
 
 class Entity;
+class BackGroundManager;
 
 class DrawManager {
 private:
@@ -18,7 +19,6 @@ private:
 
     SpriteManager *spriteManager;
     TextureManager *textureManager;
-    BackGroundManager *backGroundManager;
     EntityManager *entityManager;
 
 

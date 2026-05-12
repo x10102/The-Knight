@@ -7,6 +7,7 @@
 #include <iostream>
 #include <ostream>
 
+#include "../../Managers/BackGroundManager.h"
 #include "../../UIdirectory/UI/PlayerUIHP.h"
 #include "SFML/Graphics/Sprite.hpp"
 #include "SFML/Window/Event.hpp"
@@ -18,18 +19,12 @@ Player::Player(sf::Vector2f position, sf::Vector2f velocity) : Entity(position, 
     float y = 2.2f;
 
     //Docasne:{
-    sf::Texture hitboxTexture;
-    if (!hitboxTexture.loadFromFile("../../textures/hitbox.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    hitBox.setTexture(hitboxTexture);
+
+    hitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
 
-    sf::Texture hitboxTextureAttack;
-    if (!hitboxTextureAttack.loadFromFile("../../textures/hitbox.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    attackHitBox.setTexture(hitboxTextureAttack);
+    attackHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
+
 
     //docasne}
 
@@ -52,20 +47,13 @@ void Player::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &envir
     if (!freez) {
         beeingHitFunc();
     }
-
     colisionDetectionEntityExtention(name);
+    BackGroundManager::getInstance().chackCameraCorner(velocity);
 
     if (!freez) {
         movmentUpdate();
     }
-    playerUIHP->getInstance().updateHPbar(hp, window);
 
-    std::cout << velocity.x<<std::endl;
-
-
-
-    drawEntity(window);
-    drawHitbox(window);
 }
 
 
@@ -456,8 +444,14 @@ bool Player::getBoolCorner() {
 }
 
 void Player::drawHitbox(sf::RenderWindow &window) {
-    spriteManager->getInstance().drawSprite(&hitBox, hitBoxPosition.x, hitBoxPosition.y, window);
+    spriteManager->getInstance().drawSprite(&hitBox, hitBoxPosition.x,  hitBoxPosition.y, window);
+
     if (attackHitBoxIsActive) {
-        spriteManager->getInstance().drawSprite(&attackHitBox, attackHitBoxPosition.x, attackHitBoxPosition.y, window);
+        spriteManager->getInstance().drawSprite(&attackHitBox, attackHitBoxPosition.x,  attackHitBoxPosition.y, window);
     }
 }
+
+void Player::drawAdditions(sf::RenderWindow &window) {
+    playerUIHP->getInstance().updateHPbar(hp, window);
+}
+

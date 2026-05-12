@@ -231,6 +231,12 @@ TextureManager::TextureManager() {
     }
     textures["Plarform1"] = texture;
     numOfFramesTextures["Plarform1"] = 1;
+
+    if (!texture.loadFromFile("../../textures/hitbox.png"))  {
+        throw std::runtime_error("Nelze načíst Idle texturu");
+    }
+    textures["hitbox"] = texture;
+    numOfFramesTextures["hitbox"] = 1;
 }
 
 

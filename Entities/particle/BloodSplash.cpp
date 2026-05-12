@@ -36,7 +36,6 @@ void BloodSplash::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &
 
     movmentSinchronaz();
 
-    drawEntity( window);
 }
 
 void BloodSplash::cooldowns_and_unIntraptebulActions() {

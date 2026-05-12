@@ -28,8 +28,6 @@ void Platform::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &env
 
     movmentUpdate();
 
-    drawEntity( window);
-
 }
 
 void Platform::movmentUpdate() {

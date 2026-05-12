@@ -32,7 +32,6 @@ void HellHoundGore::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager
 
     movmentUpdate();
 
-    drawEntity( window);
 }
 
 void HellHoundGore::killParicul() {

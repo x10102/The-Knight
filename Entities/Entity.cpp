@@ -36,6 +36,8 @@ void Entity::drawEntity( sf::RenderWindow& window) {
 }
 void Entity::drawHitbox( sf::RenderWindow &window) {};
 
+void Entity::drawAdditions(sf::RenderWindow &window) {};
+
 void Entity::setTexture(std::string newNameOfTexture) {
   spriteManager->getInstance().setTextureToSprite(newNameOfTexture,&sprite);
   currentTexture = newNameOfTexture;
@@ -99,9 +101,6 @@ void Entity::movmentSinchronaz() {
     if (entityManager->getInstance().getCornerBool()) {
       float playerXVelocity = entityManager->getInstance().getVelocityOfEntity("Player").x;
       position.x = position.x - playerXVelocity;
-
-
-      std::cout << "sin" + std::to_string(playerXVelocity)<<std::endl;
     }
   }
 }

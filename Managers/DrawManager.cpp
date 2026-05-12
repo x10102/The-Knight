@@ -4,14 +4,20 @@
 
 #include "DrawManager.h"
 
+#include <iostream>
+#include <ostream>
+
 
 void DrawManager::drawGame(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
-    for (auto &[nameOfEntity, entity]: entityManager->uMOfEntitys) {
+
+    BackGroundManager::getInstance().drawBackground(window);
+
+    for (auto &[nameOfEntity, entity]: entityManager->getInstance().uMOfEntitys) {
         entity->drawEntity(window);
         entity->drawHitbox(window);
+        entity->drawAdditions(window);
     }
 
-    for (auto &[nameOfEntity, entity]: entityManager->uMOfEntitys) {
 
-    }
+
 }

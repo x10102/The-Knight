@@ -18,17 +18,9 @@ HellHound::HellHound(sf::Vector2f position, sf::Vector2f velocity, std::string n
 
     colisionDamage = 10;
 
-    if (!hitboxTexture.loadFromFile("../../textures/hitbox.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    hitBox.setTexture(hitboxTexture);
+    hitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
+    attackHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
-
-    sf::Texture hitboxTextureAttack;
-    if (!hitboxTextureAttack.loadFromFile("../../textures/hitbox.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    attackHitBox.setTexture(hitboxTextureAttack);
 
     scale = sf::Vector2f(x,y);
     faceingDirection = "left";
@@ -90,8 +82,7 @@ void HellHound::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &en
     if (!freez) {
         movmentUpdate();
     }
-    drawEntity( window);
-    drawHitbox( window);
+
 }
 
 void HellHound::passivActionStandStill() {

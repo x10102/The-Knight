@@ -6,8 +6,10 @@
 
 #include "Insertors/InsertEntity.h"
 #include "Managers/BackGroundManager.h"
+#include "Managers/DrawManager.h"
 #include "Managers/EnvironmenAndPhysicsManager.h"
 #include "SFML/Graphics.hpp"
+
 
 
 int main() {
@@ -17,15 +19,19 @@ int main() {
 
     EntityManager &entityManager = EntityManager::getInstance();
 
+    DrawManager &drawManager = DrawManager::getInstance();
+
+    spawnManager.spawnPlayer({735,700}, {0, 0});
+
+    environmenAndPhysicsManager.platformGeneretion({200,720}, "--");
+
+    spawnManager.spawnHellHound({1000,700}, {0,0});
 
 
-    spawnManager.spawnPlayer({0,700}, {0, 0});
-
-    environmenAndPhysicsManager.platformGeneretion({2000,720}, "--");
 
 
+    BackGroundManager &backgroundManager = BackGroundManager::getInstance();
 
-    BackGroundManager backGroundManager;
 
     sf::RenderWindow window(sf::VideoMode(1600, 1200), "The Knight");
     window.setFramerateLimit(60);
@@ -41,12 +47,14 @@ int main() {
         }
 
         window.clear();
-        backGroundManager.drawBackground(window);
         entityManager.update(window, environmenAndPhysicsManager);
+        backgroundManager.logicOfBackground(window);
+        drawManager.getInstance().drawGame(window, environmenAndPhysicsManager);
+
+
         window.display();
 
         std::cout << "end"<<std::endl;
-
     }
 
     return 0;

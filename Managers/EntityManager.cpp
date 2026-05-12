@@ -11,6 +11,8 @@ void EntityManager::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager
     for (auto &[nameOfEntity, entity]: uMOfEntitys) {
         entity->update(window, environmenAndPhysicsManager);
     }
+
+
     checkEntityHitBox();
     freezingGame();
     spriteManager->getInstance().resetAnimationTimer();
@@ -26,6 +28,7 @@ sf::Vector2f EntityManager::getVelocityOfEntity(std::string nameOfEntity) {
 }
 
 void EntityManager::cornerBoolSetFalsePlayer() {
+
     uMOfEntitys.at("Player")->cornerBoolSetFalse();
 }
 
@@ -44,14 +47,21 @@ bool EntityManager::getAttacIsActiveBool(std::string nameOfEntity) {
 
 
 void EntityManager::checkEntityHitBox() {
+
     if (!gameIsFreezd) {
         for (auto &[nameOfEntity, entityAttacking]: uMOfEntitys) {
+
+
+            sf::FloatRect attackBounds = entityAttacking->getAttackHitbox().getGlobalBounds();
+            std::cout << "Attack hitbox: " << attackBounds.left << ", " << attackBounds.top << ", " << attackBounds.width << ", " << attackBounds.height << std::endl;
+
             if (uMOfEntitys.at("Player") != entityAttacking) {
                 if (uMOfEntitys.at("Player")->getAttackHitboxIsActive() && entityAttacking->getAttackHitboxIsActive()) {
                     if (entityAttacking->getAttackHitbox().getGlobalBounds().intersects(
                         uMOfEntitys.at("Player")->getAttackHitbox().getGlobalBounds())) {
                         uMOfEntitys.at("Player")->setEntityAsInvincibul(40);
                         hitEntity(entityAttacking, uMOfEntitys.at("Player"), 2);
+
                     }
                 }
             }

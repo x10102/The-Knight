@@ -43,6 +43,8 @@ public:
     bool ignoreFloor = false;
     bool colidebul = false;
 
+    bool isOnCornerOfTheMan;
+
     int invincibilityTime;
     bool invincibility = false;
     sf::Clock invincClock;
@@ -95,6 +97,7 @@ public:
     virtual void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager); //osobni Update Kazde Entity
     void drawEntity(sf::RenderWindow &window); // nakresli sam sebe
     virtual void drawHitbox(sf::RenderWindow &window);
+    virtual void drawAdditions(sf::RenderWindow &window);
 
     void setTexture(std::string newNameOfTexture);// nastaví texturu
     virtual void gravityAndGround(EnvironmenAndPhysicsManager &environmenAndPhysicsManage);

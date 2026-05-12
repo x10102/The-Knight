@@ -7,6 +7,8 @@
 #include <map>
 #include <unordered_map>
 
+#include "iostream"
+
 #include "SpriteManager.h"
 #include "../Managers/EnvironmenAndPhysicsManager.h"
 
@@ -15,6 +17,7 @@ class Entity;
 class EntityManager {
 
 private:
+    int id;
     EntityManager() {}
 
     SpriteManager *spriteManager;
