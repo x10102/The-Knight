@@ -39,9 +39,11 @@ void HellHoundGore::killParicul() {
 }
 
 void HellHoundGore::movmentUpdate() {
-    angle = angle + 5;
-    position.x += velocity.x;
-    position.y += velocity.y;
+    if (!freez) {
+        angle = angle + 5;
+        position.x += velocity.x;
+        position.y += velocity.y;
+    }
 }
 
 

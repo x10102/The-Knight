@@ -55,7 +55,7 @@ void SpriteManager::transfomration(sf::Sprite *sprite, sf::Vector2f scale, std::
 
 void SpriteManager::hitBoxTransformation(sf::Sprite *sprite, sf::Vector2f scale, sf::String direction) {
     sprite->setOrigin(sprite->getLocalBounds().width/2, sprite->getLocalBounds().height/2);
-    sprite->setColor(sf::Color(255,255,255,150));
+    sprite->setColor(sf::Color(255,255,255,0));
     sprite->setScale(scale.x, scale.y);
     switchSides(direction, sprite);
 

@@ -21,10 +21,8 @@ HellHound::HellHound(sf::Vector2f position, sf::Vector2f velocity, std::string n
     hitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
     attackHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
-
     scale = sf::Vector2f(x,y);
     faceingDirection = "left";
-
 }
 
 
@@ -69,7 +67,6 @@ void HellHound::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &en
         beeingHitFunc();
         hellHoundAI();
     }
-    hitBoxUpdateposition();
     if (!freez) {
         transformationSprite(currentTexture);
     }
@@ -82,6 +79,8 @@ void HellHound::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &en
     if (!freez) {
         movmentUpdate();
     }
+    hitBoxUpdateposition();
+
 
 }
 
@@ -180,7 +179,6 @@ void HellHound::passivActionGetHit(std::string fecingDirection, int damage) {
         if (!freez) {
             if (!gotHit) {
                 ParticalManager::getInstance().spawnBloodSplash({position.x ,position.y + 30}, fecingDirection, false);
-
                 attackHitBoxIsActive = false;
                 unIntaraptebulAnimation = false;
                 setTexture("HellHoundHit");
@@ -255,7 +253,7 @@ void HellHound::hellHoundAI() {
 void HellHound::hitBoxUpdateposition() {
 
     if (currentTexture == "HellHoundJump") {
-        hitboxScale = sf::Vector2f(0.25f,0.3f);
+        hitboxScale = sf::Vector2f(0.35f,0.3f);
         if (faceingDirection == "right") {
             hitBoxPosition.x = position.x - 10;
 
@@ -266,19 +264,19 @@ void HellHound::hitBoxUpdateposition() {
         hitBoxPosition.y = position.y + 20;
     }
     else {
-        hitboxScale = sf::Vector2f(0.25f,0.3f);
+        hitboxScale = sf::Vector2f(0.35f,0.3f);
         if (faceingDirection == "right") {
-            hitBoxPosition.x = position.x - 10;
+            hitBoxPosition.x = position.x + 5;
 
         }
         else if (faceingDirection == "left") {
-            hitBoxPosition.x = position.x + 10;
+            hitBoxPosition.x = position.x - 5;
         }
         hitBoxPosition.y = position.y + 50;
     }
 
     if (currentTexture == "HellHoundJump") {
-        attackHitboxScale = sf::Vector2f(0.32f,0.3f);
+        attackHitboxScale = sf::Vector2f(0.25f,0.28f);
         if (faceingDirection == "right") {
             attackHitBoxPosition.x = position.x - 35;
 
@@ -289,7 +287,8 @@ void HellHound::hitBoxUpdateposition() {
         attackHitBoxPosition.y = position.y + 30;
     }
 
-
+    hitBox.setPosition(hitBoxPosition);
+    attackHitBox.setPosition(attackHitBoxPosition);
 }
 
 
@@ -297,7 +296,6 @@ void HellHound::hitBoxUpdateposition() {
 void HellHound::movmentUpdate() {
     position.x += velocity.x;
     position.y += velocity.y;
-
 }
 
 

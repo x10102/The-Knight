@@ -6,7 +6,6 @@
 
 
 Platform::Platform(sf::Vector2f position, std::string name) : Entity(position, {0,0}, name) {
-
     colidebul = true;
 
     float x = 2.4f;
@@ -14,10 +13,13 @@ Platform::Platform(sf::Vector2f position, std::string name) : Entity(position, {
 
     int randTextureNum = (rand() % 2) + 1;
 
+    colisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
+
     setTexture("Plarform" + std::to_string(randTextureNum));
 
     this->name = name;
     scale = sf::Vector2f(x,y);
+
 }
 
 
@@ -28,11 +30,27 @@ void Platform::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &env
 
     movmentUpdate();
 
+    hitBoxUpdateposition();
 }
 
 void Platform::movmentUpdate() {
     position.x += velocity.x;
     position.y += velocity.y;
+}
+
+
+void Platform::hitBoxUpdateposition() {
+
+    colisionHitboxScale = sf::Vector2f(0.6f, 0.2f);
+    colisionBoxPosition.x = position.x;
+    colisionBoxPosition.y = position.y + 10;
+    colisionHitBox.setPosition(colisionBoxPosition);
+
+}
+
+
+void Platform::drawColisionHitBox(sf::RenderWindow &window) {
+    SpriteManager::getInstance().drawSprite(&colisionHitBox, colisionBoxPosition.x,  colisionBoxPosition.y, window);
 }
 
 

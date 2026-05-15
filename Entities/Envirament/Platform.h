@@ -14,12 +14,16 @@ class Platform : public Entity {
 
     public:
 
+
+    void hitBoxUpdateposition() override;
+
     Platform(sf::Vector2f position, std::string name);
 
     void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
 
     void movmentUpdate() override;
 
+    void drawColisionHitBox(sf::RenderWindow &window) override;
 
 
 };

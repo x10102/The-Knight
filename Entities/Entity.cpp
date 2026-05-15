@@ -20,11 +20,12 @@ Entity::Entity(sf::Vector2f position, sf::Vector2f velocity, std::string name) {
 bool Entity::getAttackHitboxIsActive() {
   return attackHitBoxIsActive;
 }
-sf::Sprite Entity::getHitbox() {
-  return hitBox;
+sf::Sprite *Entity::getHitbox() {
+  return &hitBox;
 }
-sf::Sprite Entity::getAttackHitbox() {
-  return attackHitBox;
+
+sf::Sprite *Entity::getAttackHitbox() {
+  return &attackHitBox;
 }
 
 bool Entity::getBoolAttackIsActive() {
@@ -38,6 +39,9 @@ void Entity::drawHitbox( sf::RenderWindow &window) {};
 
 void Entity::drawAdditions(sf::RenderWindow &window) {};
 
+void Entity::drawColisionHitBox(sf::RenderWindow &window) {};
+
+
 void Entity::setTexture(std::string newNameOfTexture) {
   spriteManager->getInstance().setTextureToSprite(newNameOfTexture,&sprite);
   currentTexture = newNameOfTexture;
@@ -47,6 +51,8 @@ void Entity::transformationSprite(std::string currentTexture) {
   spriteManager->getInstance().transfomration(&sprite, scale, faceingDirection, currentTexture);
   spriteManager->getInstance().hitBoxTransformation(&hitBox, hitboxScale, faceingDirection);
   spriteManager->getInstance().hitBoxTransformation(&attackHitBox, attackHitboxScale, faceingDirection);
+  spriteManager->getInstance().hitBoxTransformation(&colisionHitBox, colisionHitboxScale, faceingDirection);
+
 
 }
 

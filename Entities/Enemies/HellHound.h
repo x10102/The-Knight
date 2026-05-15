@@ -13,7 +13,7 @@ class Entity;
 
 class HellHound : public Entity {
 
-    int hp = 100;
+    int hp = 25;
     int attackBite = 10;
 
 public:

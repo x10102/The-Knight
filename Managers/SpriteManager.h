@@ -45,8 +45,6 @@ class SpriteManager{
     void resetAnimationTimer();
     void rotateSprite(sf::Sprite *sprite, int angle);
 
-
-
 };
 
 

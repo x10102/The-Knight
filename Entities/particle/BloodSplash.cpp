@@ -30,16 +30,18 @@ BloodSplash::BloodSplash(sf::Vector2f position, sf::Vector2f velocity, std::stri
 
 
 void BloodSplash::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
-    transformationSprite(currentTexture);
-
-    cooldowns_and_unIntraptebulActions();
+    if (!freez) {
+        transformationSprite(currentTexture);
+    }
+    if (!freez) {
+        cooldowns_and_unIntraptebulActions();
+    }
 
     movmentSinchronaz();
 
 }
 
 void BloodSplash::cooldowns_and_unIntraptebulActions() {
-
     //attack finish animacion
         if (spriteManager->getInstance().getIndexOfAnimation(&sprite) >= spriteManager->getInstance().
         getMaxIndexOfAnimation(&sprite) - (sprite.getTexture()->getSize().x / textureManager->getInstance().numOfFramesTextures[nameOfTexture])){
@@ -48,6 +50,5 @@ void BloodSplash::cooldowns_and_unIntraptebulActions() {
 }
 void BloodSplash::killParicul() {
         entityManager->getInstance().killEntity(name, this);
-
 }
 

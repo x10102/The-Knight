@@ -23,9 +23,7 @@ int main() {
 
     spawnManager.spawnPlayer({735,700}, {0, 0});
 
-    environmenAndPhysicsManager.platformGeneretion({200,720}, "--");
-
-    spawnManager.spawnHellHound({1000,700}, {0,0});
+    environmenAndPhysicsManager.platformGeneretion({200,720}, "-");
 
 
 
@@ -37,7 +35,6 @@ int main() {
     window.setFramerateLimit(60);
 
     while (window.isOpen()) {
-        std::cout << "start"<<std::endl;
 
         sf::Event event;
 
@@ -52,9 +49,10 @@ int main() {
         drawManager.getInstance().drawGame(window, environmenAndPhysicsManager);
 
 
+
+
         window.display();
 
-        std::cout << "end"<<std::endl;
     }
 
     return 0;

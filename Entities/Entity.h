@@ -85,6 +85,12 @@ public:
     sf::Texture attackHitBoxTexture;
     sf::Vector2f attackHitBoxPosition;
 
+
+    sf::Sprite colisionHitBox;
+    sf::Vector2f colisionHitboxScale;
+    sf::Texture colisionHitBoxTexture;
+    sf::Vector2f colisionBoxPosition;
+
     bool attackHitBoxIsActive = false;
 
     sf::String faceingDirection;
@@ -98,6 +104,7 @@ public:
     void drawEntity(sf::RenderWindow &window); // nakresli sam sebe
     virtual void drawHitbox(sf::RenderWindow &window);
     virtual void drawAdditions(sf::RenderWindow &window);
+    virtual void drawColisionHitBox(sf::RenderWindow &window);
 
     void setTexture(std::string newNameOfTexture);// nastaví texturu
     virtual void gravityAndGround(EnvironmenAndPhysicsManager &environmenAndPhysicsManage);
@@ -147,8 +154,9 @@ public:
 
     virtual bool getBoolCorner();
     bool getAttackHitboxIsActive();
-    sf::Sprite getHitbox();
-    sf::Sprite getAttackHitbox();
+    sf::Sprite *getHitbox();
+
+    sf::Sprite *getAttackHitbox();
 
     sf::Sprite &getSpriteOfEntity();
 

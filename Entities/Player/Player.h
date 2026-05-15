@@ -32,6 +32,7 @@ public:
         Player(sf::Vector2f position,sf::Vector2f velocity);
         void drawHitbox(sf::RenderWindow &window) override;
         void drawAdditions(sf::RenderWindow &window) override;
+        void drawColisionHitBox(sf::RenderWindow &window) override;
         void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
         void input();
         void cooldowns_and_unIntraptebulActions() override;

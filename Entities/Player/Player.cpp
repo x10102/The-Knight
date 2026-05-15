@@ -22,9 +22,9 @@ Player::Player(sf::Vector2f position, sf::Vector2f velocity) : Entity(position, 
 
     hitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
-
     attackHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
+    colisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
     //docasne}
 
@@ -38,7 +38,6 @@ void Player::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &envir
         cooldowns_and_unIntraptebulActions();
         input();
     }
-    hitBoxUpdateposition();
     if (!freez) {
         transformationSprite(currentTexture);
     }
@@ -54,10 +53,13 @@ void Player::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &envir
         movmentUpdate();
     }
 
+    hitBoxUpdateposition();
+
 }
 
 
 void Player::hitBoxUpdateposition() {
+
     if (currentTexture == "SlideKnight") {
         hitboxScale = sf::Vector2f(0.2f, 0.2f);
         if (faceingDirection == "right") {
@@ -66,14 +68,23 @@ void Player::hitBoxUpdateposition() {
             hitBoxPosition.x = position.x;
         }
         hitBoxPosition.y = position.y + 70;
+
+        colisionHitboxScale = sf::Vector2f(0.12f, 0.2f);
+        colisionBoxPosition.x = position.x;
+        colisionBoxPosition.y = position.y + 70;
     } else {
-        hitboxScale = sf::Vector2f(0.17f, 0.4f);
+        hitboxScale = sf::Vector2f(0.12f, 0.35f);
         if (faceingDirection == "right") {
-            hitBoxPosition.x = position.x - 10;
+            hitBoxPosition.x = position.x - 12;
         } else if (faceingDirection == "left") {
-            hitBoxPosition.x = position.x + 10;
+            hitBoxPosition.x = position.x + 12;
         }
         hitBoxPosition.y = position.y + 50;
+
+        colisionHitboxScale = sf::Vector2f(0.1f, 0.4f);
+        colisionBoxPosition.x = position.x;
+        colisionBoxPosition.y = position.y + 50;
+
     }
 
 
@@ -96,6 +107,11 @@ void Player::hitBoxUpdateposition() {
         }
         attackHitBoxPosition.y = position.y + 40;
     }
+
+
+    colisionHitBox.setPosition(colisionBoxPosition);
+    hitBox.setPosition(hitBoxPosition);
+    attackHitBox.setPosition(attackHitBoxPosition);
 }
 
 void Player::transformHitBoxAttack1() {
@@ -189,6 +205,8 @@ void Player::input() {
 }
 
 void Player::entityFallManagment() {
+
+
     if (position.y + velocity.y + 1 < 704) {
         isInAir = true;
     } else {
@@ -455,3 +473,6 @@ void Player::drawAdditions(sf::RenderWindow &window) {
     playerUIHP->getInstance().updateHPbar(hp, window);
 }
 
+void Player::drawColisionHitBox(sf::RenderWindow &window) {
+    SpriteManager::getInstance().drawSprite(&colisionHitBox, colisionBoxPosition.x,  colisionBoxPosition.y, window);
+}

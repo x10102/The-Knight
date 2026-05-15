@@ -12,12 +12,12 @@ void DrawManager::drawGame(sf::RenderWindow &window, EnvironmenAndPhysicsManager
 
     BackGroundManager::getInstance().drawBackground(window);
 
-    for (auto &[nameOfEntity, entity]: entityManager->getInstance().uMOfEntitys) {
+    for (auto &[nameOfEntity, entity]: EntityManager::getInstance().uMOfEntitys) {
         entity->drawEntity(window);
         entity->drawHitbox(window);
+        entity->drawColisionHitBox(window);
         entity->drawAdditions(window);
     }
-
 
 
 }

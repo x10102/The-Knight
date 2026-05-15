@@ -44,7 +44,6 @@ void SpawnManager::spawnPlatform(sf::Vector2f spawnPosition) {
     std::string name = "Xlatform" + std::to_string(id);
     id++;
 
-
     Platform* platformTerm = new Platform(spawnPosition, name);
     insertEntity->getInstance().insertEntity(name,platformTerm);
 
