@@ -95,6 +95,11 @@ public:
     sf::Vector2f colisionBoxPosition;
     float colisionHitBoxYOffSet;
 
+    sf::Sprite shadow;
+    sf::Vector2f shadowScale;
+    sf::Texture shadowTexture;
+    sf::Vector2f shadowPosition;
+
     float getColisionHitBoxYOffSet();
 
     bool attackHitBoxIsActive = false;
@@ -173,6 +178,8 @@ public:
 
     void setVelocity(sf::Vector2f newVelocity);
     sf::Vector2f getVelocity();
+
+  virtual void shadowUpdate();
 
 };
 

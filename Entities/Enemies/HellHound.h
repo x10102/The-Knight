@@ -7,6 +7,7 @@
 
 #include "../../Managers/SpawnManager.h"
 #include "../../Managers/EntityManager.h"
+#include "../../Managers/EnvironmenAndPhysicsManager.h"
 
 
 class Entity;
@@ -25,6 +26,8 @@ public:
     void drawHitbox( sf::RenderWindow &window) override;
 
     void drawColisionHitBox(sf::RenderWindow &window) override;
+
+    void drawAdditions(sf::RenderWindow &window);
 
     void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
 
@@ -53,6 +56,8 @@ public:
     void actionWalkRight() override;
 
     void actionJumpAttack();
+
+    void shadowUpdate() override;
 
 
 };

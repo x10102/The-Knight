@@ -8,6 +8,7 @@
 #include <ostream>
 
 #include "../Entities/Envirament/Platform.h"
+#include "../Entities/Envirament/PlatformEag.h"
 #include "../Entities/particle/HellHoundGore/HellHoundGore.h"
 
 
@@ -46,5 +47,12 @@ void SpawnManager::spawnPlatform(sf::Vector2f spawnPosition) {
 
     Platform* platformTerm = new Platform(spawnPosition, name);
     insertEntity->getInstance().insertEntity(name,platformTerm);
+}
 
+void SpawnManager::spawnEagOfPlatform(sf::Vector2f spawnPosition, std::string side) {
+    std::string name = "XlatformEag" + std::to_string(id);
+    id++;
+
+    PlatformEag* platformEagTemp = new PlatformEag(spawnPosition, name, side);
+    insertEntity->getInstance().insertEntity(name,platformEagTemp);
 }

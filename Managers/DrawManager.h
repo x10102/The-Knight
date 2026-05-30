@@ -29,6 +29,8 @@ public:
     }
 
 
+
+
     void drawGame(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager);
 
 

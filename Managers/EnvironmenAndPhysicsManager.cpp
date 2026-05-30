@@ -32,13 +32,18 @@ void EnvironmenAndPhysicsManager::groundeAndGravity(sf::Vector2f &position, sf::
 void EnvironmenAndPhysicsManager::platformGeneretion(sf::Vector2f position, std::string structure) {
 
     int offSetForLatform = 0;
+
+    SpawnManager::getInstance().spawnEagOfPlatform({position.x - 89, position.y}, "left");
+
     for (int indexOfChar = 0; indexOfChar < structure.size(); indexOfChar++) {
 
         if (structure[indexOfChar] == '-') {
             SpawnManager::getInstance().spawnPlatform({offSetForLatform + position.x, position.y});
         }
         offSetForLatform += 150;
-
     }
+
+    SpawnManager::getInstance().spawnEagOfPlatform({position.x + offSetForLatform - 150 + 89, position.y}, "right");
+
 }
 

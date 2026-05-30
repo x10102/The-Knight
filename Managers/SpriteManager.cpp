@@ -46,20 +46,25 @@ void SpriteManager::switchSides(std::string direction, sf::Sprite *sprite) {
 
 void SpriteManager::transfomration(sf::Sprite *sprite, sf::Vector2f scale, std::string direction, std::string currentTexture) {
     animationUpdate(sprite, currentTexture);
-    int hightNum = sprite->getTexture()->getSize().y;
-    int hDel = -hightNum/ 16 + 7;
-    sprite->setOrigin(sprite->getLocalBounds().width/2, sprite->getLocalBounds().height/hDel);
+    sprite->setOrigin(sprite->getLocalBounds().width/2, sprite->getLocalBounds().height);
     sprite->setScale(scale.x, scale.y);
     switchSides(direction, sprite);
 }
 
 void SpriteManager::hitBoxTransformation(sf::Sprite *sprite, sf::Vector2f scale, sf::String direction) {
-    sprite->setOrigin(sprite->getLocalBounds().width/2, sprite->getLocalBounds().height/2);
+    sprite->setOrigin(sprite->getLocalBounds().width/2, sprite->getLocalBounds().height);
     sprite->setColor(sf::Color(255,255,255,0));
     sprite->setScale(scale.x, scale.y);
     switchSides(direction, sprite);
 
 }
+
+void SpriteManager::shadowTransform(sf::Sprite *sprite, sf::Vector2f scale) {
+    sprite->setOrigin(sprite->getLocalBounds().width/2, sprite->getLocalBounds().height);
+    sprite->setScale(scale.x, scale.y);
+    sprite->setColor(sf::Color(255,255,255,80));
+}
+
 
 void SpriteManager::transformSpriteHPBar(sf::Sprite *sprite, sf::Vector2f scale, int hp) {
     sf::IntRect rect =  sprite->getTextureRect();

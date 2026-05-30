@@ -19,6 +19,8 @@ HellHound::HellHound(sf::Vector2f position, sf::Vector2f velocity, std::string n
     attackHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
     colisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
+    shadow.setTexture(TextureManager::getInstance().textures["shedowOfEntity"]);
+
 
     scale = sf::Vector2f(x,y);
     faceingDirection = "left";
@@ -83,6 +85,7 @@ void HellHound::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &en
     gravityAndGround(environmenAndPhysicsManager);
 
 
+    shadowUpdate();
     hitBoxUpdateposition();
     colisionDetectionEntityExtention(name);
 
@@ -90,9 +93,6 @@ void HellHound::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &en
     if (!freez) {
         movmentUpdate();
     }
-
-
-    std::cout << "......................-.-.-."<< std::endl;
 
 
 }
@@ -125,7 +125,7 @@ void HellHound::actionWalkLeft() {
 
 
 void HellHound::entityFallManagment() {
-    if (position.y + velocity.y + 1 < 704) {
+    if (position.y + velocity.y + 1 < EnvironmenAndPhysicsManager::getInstance().floor) {
         isInAir = true;
     }
     else {
@@ -191,7 +191,7 @@ void HellHound::beeingHitFunc() {
 void HellHound::passivActionGetHit(std::string fecingDirection, int damage) {
         if (!freez) {
             if (!gotHit) {
-                ParticalManager::getInstance().spawnBloodSplash({position.x ,position.y + 30}, fecingDirection, false);
+                ParticalManager::getInstance().spawnBloodSplash({position.x ,position.y -40}, fecingDirection, false);
                 attackHitBoxIsActive = false;
                 unIntaraptebulAnimation = false;
                 setTexture("HellHoundHit");
@@ -215,19 +215,21 @@ void HellHound::passivActionGetHit(std::string fecingDirection, int damage) {
 }
 
 void HellHound::passivActionDie() {
-    ParticalManager::getInstance().spawnBloodSplash({position.x,position.y + 20}, faceingDirection, true);
+    ParticalManager::getInstance().spawnBloodSplash({position.x,position.y + 15}, faceingDirection, true);
 
     sf::Vector2f velocityGore = {0,0};
     if (faceingDirection == "left") {
-        velocityGore.x = -4;
+        velocityGore.x = -5;
     }
     else {
-        velocityGore.x = 4;
+        velocityGore.x = 5;
     }
+    velocityGore.y = -5;
 
-    ParticalManager::getInstance().spawnHellHoundGore({position.x - 40,position.y},{static_cast<float>(velocity.x + velocityGore.x * 1.2),velocity.y- 3},faceingDirection, "GoreHellHound2");
-    ParticalManager::getInstance().spawnHellHoundGore({position.x + 10,position.y},{static_cast<float>(velocity.x + velocityGore.x * 1.2),velocity.y - 2},faceingDirection, "GoreHellHound5");
-    ParticalManager::getInstance().spawnHellHoundGore({position.x,position.y + 5},{static_cast<float>(velocity.x + velocityGore.x * 1.2),velocity.y - 2},faceingDirection, "GoreHellHound1");
+
+    ParticalManager::getInstance().spawnHellHoundGore({position.x - 40,position.y - 48},{static_cast<float>(velocity.x + velocityGore.x * 1.2),velocity.y- 3},faceingDirection, "GoreHellHound2");
+    ParticalManager::getInstance().spawnHellHoundGore({position.x + 10,position.y - 40},{static_cast<float>(velocity.x + velocityGore.x * 1.2),velocity.y - 2},faceingDirection, "GoreHellHound5");
+    ParticalManager::getInstance().spawnHellHoundGore({position.x,position.y - 42},{static_cast<float>(velocity.x + velocityGore.x * 1.2),velocity.y - 2},faceingDirection, "GoreHellHound1");
 
 
 
@@ -274,13 +276,11 @@ void HellHound::hitBoxUpdateposition() {
         else if (faceingDirection == "left") {
             hitBoxPosition.x = position.x + 10;
         }
-        hitBoxPosition.y = position.y + 20;
+        hitBoxPosition.y = position.y;
 
         colisionHitboxScale = sf::Vector2f(0.1f, 0.4f);
         colisionBoxPosition.x = position.x;
-        float spriteBottom = position.y + (sprite.getGlobalBounds().height - sprite.getOrigin().y * scale.y);
-        float hitboxHalfHeight = colisionHitBox.getGlobalBounds().height / 2;
-        colisionBoxPosition.y = spriteBottom - hitboxHalfHeight;
+        colisionBoxPosition.y = position.y;
 
     }
     else {
@@ -291,16 +291,13 @@ void HellHound::hitBoxUpdateposition() {
         else if (faceingDirection == "left") {
             hitBoxPosition.x = position.x - 5;
         }
-        hitBoxPosition.y = position.y + 50;
+        hitBoxPosition.y = position.y;
 
 
         colisionHitboxScale = sf::Vector2f(0.1f, 0.4f);
         colisionBoxPosition.x = position.x;
-        float spriteBottom = position.y + (sprite.getGlobalBounds().height - sprite.getOrigin().y * scale.y);
-        float hitboxHalfHeight = colisionHitBox.getGlobalBounds().height / 2;
-        colisionBoxPosition.y = spriteBottom - hitboxHalfHeight;
+        colisionBoxPosition.y = position.y;
 
-        std::cout << sprite.getOrigin().y << std::endl;
 
 
     }
@@ -314,7 +311,7 @@ void HellHound::hitBoxUpdateposition() {
         else if (faceingDirection == "left") {
             attackHitBoxPosition.x = position.x + 35;
         }
-        attackHitBoxPosition.y = position.y + 30;
+        attackHitBoxPosition.y = position.y;
     }
 
 
@@ -351,4 +348,32 @@ void HellHound::drawColisionHitBox(sf::RenderWindow &window) {
     SpriteManager::getInstance().drawSprite(&colisionHitBox, colisionBoxPosition.x,  colisionBoxPosition.y, window);
 }
 
+void HellHound::shadowUpdate() {
+    if (faceingDirection == "right") {
+        shadowPosition.x = position.x - 12;
+    }
+    else if (faceingDirection == "left") {
+        shadowPosition.x = position.x + 12;
+    }
+    shadowPosition.y = EnvironmenAndPhysicsManager::getInstance().floor + 5;
 
+    EntityManager::getInstance().shadowColisionDetection(shadowPosition,name, position);
+
+    float heightOfShadow = EnvironmenAndPhysicsManager::getInstance().floor - position.y;
+
+    float heightOfShadowNumY = 0.038;
+    float heightOfShadowNumX = 0.23;
+    if (heightOfShadow > 0) {
+        heightOfShadowNumY = 0.038 - heightOfShadow / 25000 ;
+        heightOfShadowNumX = 0.23 - heightOfShadow / 10000;
+    }
+
+    shadowScale = {heightOfShadowNumX, heightOfShadowNumY};
+    SpriteManager::getInstance().shadowTransform(&shadow,shadowScale);
+
+    shadow.setPosition(shadowPosition);
+}
+
+void HellHound::drawAdditions(sf::RenderWindow &window) {
+    SpriteManager::getInstance().drawSprite(&shadow, shadowPosition.x, shadowPosition.y, window);
+}

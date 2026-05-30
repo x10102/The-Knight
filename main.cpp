@@ -23,16 +23,11 @@ int main() {
 
     DrawManager &drawManager = DrawManager::getInstance();
 
-    spawnManager.spawnPlayer({735,620}, {0, 0});
+    spawnManager.spawnPlayer({735,520}, {0, 0});
 
-    environmenAndPhysicsManager.platformGeneretion({260,754}, "-");
+    spawnManager.spawnHellHound({935,520}, {0, 0});
 
-
-
-
-
-
-
+    environmenAndPhysicsManager.platformGeneretion({60,770}, "----");
 
 
 
@@ -40,6 +35,8 @@ int main() {
 
 
     sf::RenderWindow window(sf::VideoMode(1600, 1200), "The Knight");
+
+
     window.setFramerateLimit(60);
 
     while (window.isOpen()) {
@@ -51,16 +48,15 @@ int main() {
                 window.close();
         }
 
+
         window.clear();
+
         entityManager.update(window, environmenAndPhysicsManager);
         backgroundManager.logicOfBackground(window);
         drawManager.getInstance().drawGame(window, environmenAndPhysicsManager);
 
 
-
-
         window.display();
-
     }
 
     return 0;

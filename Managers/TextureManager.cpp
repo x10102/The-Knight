@@ -237,6 +237,24 @@ TextureManager::TextureManager() {
     }
     textures["hitbox"] = texture;
     numOfFramesTextures["hitbox"] = 1;
+
+    if (!texture.loadFromFile("../../textures/shedow/oleophob_silhouette.png"))  {
+        throw std::runtime_error("Nelze načíst Idle texturu");
+    }
+    textures["shedowOfEntity"] = texture;
+    numOfFramesTextures["shedowOfEntity"] = 1;
+
+    if (!texture.loadFromFile("../../textures/forntGround/PlatformEag.png"))  {
+        throw std::runtime_error("Nelze načíst Idle texturu");
+    }
+    textures["platformEagLeft"] = texture;
+    numOfFramesTextures["platformEagLeft"] = 1;
+
+    if (!texture.loadFromFile("../../textures/forntGround/PlatformEagRight.png"))  {
+        throw std::runtime_error("Nelze načíst Idle texturu");
+    }
+    textures["platformEagRight"] = texture;
+    numOfFramesTextures["platformEagRight"] = 1;
 }
 
 

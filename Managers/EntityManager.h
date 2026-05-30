@@ -44,6 +44,8 @@ public:
 
     std::map<std::string, Entity*> uMOfEntitys; //unoredred mapa všech entit ve hře
     std::map<std::string, Entity*> uMOfEntitysToKill;
+    std::map<std::string, Entity*> uMOfDrawEntitys;
+
 
     void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &
                 environmenAndPhysicsManager);
@@ -70,6 +72,8 @@ public:
     sf::Sprite *getSpriteOfEntity(std::string name);
 
     void colisionDetection(std::string nameOfEntity);
+
+    void shadowColisionDetection(sf::Vector2f &shadowPos, std::string name, sf::Vector2f playerPosotion);
 
 };
 

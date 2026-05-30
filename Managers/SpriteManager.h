@@ -43,6 +43,7 @@ class SpriteManager{
     int getMaxIndexOfAnimation(sf::Sprite *sprite);
     void resetAnimationTimer();
     void rotateSprite(sf::Sprite *sprite, int angle);
+    void shadowTransform(sf::Sprite *sprite, sf::Vector2f scale);
 
 };
 

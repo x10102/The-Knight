@@ -59,6 +59,12 @@ add_executable(untitled46 main.cpp
         Entities/Envirament/platform.h
         Managers/DrawManager.cpp
         Managers/DrawManager.h
+        Entities/Envirament/PlatformEag.cpp
+        Entities/Envirament/PlatformEag.cpp
+        Managers/AudioAndMusicManager.cpp
+        Managers/AudioAndMusicManager.h
+        Managers/CameraManager.cpp
+        Managers/CameraManager.h
 )
 
 # Linkování SFML

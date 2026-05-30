@@ -10,4 +10,5 @@
 
 void InsertEntity::insertEntity(std::string entityName, Entity* entity) {
     entityManager.uMOfEntitys[entityName] = entity;
+    entityManager.uMOfDrawEntitys[entityName]= entity;
 }

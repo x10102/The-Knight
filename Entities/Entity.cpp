@@ -138,3 +138,5 @@ sf::Vector2f Entity::getVelocity() {
 void Entity::setVelocity(sf::Vector2f newVelocity) {
   velocity = newVelocity;
 }
+
+void Entity::shadowUpdate() {}

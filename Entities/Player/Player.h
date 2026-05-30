@@ -68,6 +68,8 @@ public:
         void cornerBoolSetFalse() override;
         bool getBoolCorner() override;
 
+        void shadowUpdate() override;
+
 };
 
 

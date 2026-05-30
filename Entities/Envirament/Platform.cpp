@@ -43,9 +43,9 @@ void Platform::movmentUpdate() {
 
 void Platform::hitBoxUpdateposition() {
 
-    colisionHitboxScale = sf::Vector2f(0.6f, 0.18f);
+    colisionHitboxScale = sf::Vector2f(0.6f, 0.175f);
     colisionBoxPosition.x = position.x;
-    colisionBoxPosition.y = position.y + 10;
+    colisionBoxPosition.y = position.y;
     colisionHitBox.setPosition(colisionBoxPosition);
 
 }

@@ -26,6 +26,7 @@ Player::Player(sf::Vector2f position, sf::Vector2f velocity) : Entity(position, 
 
     colisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
+    shadow.setTexture(TextureManager::getInstance().textures["shedowOfEntity"]);
 
     //docasne}
 
@@ -50,6 +51,7 @@ void Player::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &envir
         beeingHitFunc();
     }
 
+    shadowUpdate();
     hitBoxUpdateposition();
     colisionDetectionEntityExtention(name);
 
@@ -73,14 +75,11 @@ void Player::hitBoxUpdateposition() {
         } else if (faceingDirection == "left") {
             hitBoxPosition.x = position.x;
         }
-        hitBoxPosition.y = position.y + 70;
+        hitBoxPosition.y = position.y;
 
         colisionHitboxScale = sf::Vector2f(0.12f, 0.2f);
         colisionBoxPosition.x = position.x;
-        float spriteBottom = position.y + (sprite.getGlobalBounds().height - sprite.getOrigin().y * scale.y);
-        float hitboxHalfHeight = colisionHitBox.getGlobalBounds().height / 2;
-        colisionBoxPosition.y = spriteBottom - hitboxHalfHeight;
-        //std::cout << "hitBoxPosition.x: " << hitBoxPosition.y << std::endl;
+        colisionBoxPosition.y = position.y;
 
     } else {
         hitboxScale = sf::Vector2f(0.12f, 0.35f);
@@ -89,15 +88,12 @@ void Player::hitBoxUpdateposition() {
         } else if (faceingDirection == "left") {
             hitBoxPosition.x = position.x + 12;
         }
-        hitBoxPosition.y = position.y + 50;
+        hitBoxPosition.y = position.y;
 
         colisionHitboxScale = sf::Vector2f(0.1f, 0.4f);
         colisionBoxPosition.x = position.x;
-        float spriteBottom = position.y + (sprite.getGlobalBounds().height - sprite.getOrigin().y * scale.y);
-        float hitboxHalfHeight = colisionHitBox.getGlobalBounds().height / 2;
-        colisionBoxPosition.y = spriteBottom - hitboxHalfHeight;
-        std::cout << "hNIGGGGGGGERitBoxPosition.x: " << colisionBoxPosition.y << std::endl;
-        std::cout << "hNIGGGGGGGERitBoxPosition.x: " << position.y << std::endl;
+        colisionBoxPosition.y = position.y;
+
 
 
 
@@ -111,7 +107,7 @@ void Player::hitBoxUpdateposition() {
         } else if (faceingDirection == "left") {
             attackHitBoxPosition.x = position.x - 70;
         }
-        attackHitBoxPosition.y = position.y + 40;
+        attackHitBoxPosition.y = position.y;
     }
 
     if (currentTexture == "SaccendAttackKnight") {
@@ -121,7 +117,7 @@ void Player::hitBoxUpdateposition() {
         } else if (faceingDirection == "left") {
             attackHitBoxPosition.x = position.x - 25;
         }
-        attackHitBoxPosition.y = position.y + 40;
+        attackHitBoxPosition.y = position.y;
     }
 
 
@@ -223,7 +219,7 @@ void Player::input() {
 void Player::entityFallManagment() {
 
 
-    if (position.y + velocity.y + 1 < 704) {
+    if (position.y + velocity.y + 1 < EnvironmenAndPhysicsManager::getInstance().floor) {
         isInAir = true;
     } else {
         isInAir = false;
@@ -498,8 +494,36 @@ void Player::drawHitbox(sf::RenderWindow &window) {
 
 void Player::drawAdditions(sf::RenderWindow &window) {
     playerUIHP->getInstance().updateHPbar(hp, window);
+
+    SpriteManager::getInstance().drawSprite(&shadow, shadowPosition.x, shadowPosition.y, window);
 }
 
 void Player::drawColisionHitBox(sf::RenderWindow &window) {
     SpriteManager::getInstance().drawSprite(&colisionHitBox, colisionBoxPosition.x,  colisionBoxPosition.y, window);
+}
+
+void Player::shadowUpdate() {
+    if (faceingDirection == "right") {
+        shadowPosition.x = position.x - 12;
+    }
+    else if (faceingDirection == "left") {
+        shadowPosition.x = position.x + 12;
+    }
+    shadowPosition.y = EnvironmenAndPhysicsManager::getInstance().floor + 5;
+
+    EntityManager::getInstance().shadowColisionDetection(shadowPosition,name, position);
+
+    float heightOfShadow = EnvironmenAndPhysicsManager::getInstance().floor - position.y;
+
+    float heightOfShadowNumY = 0.038;
+    float heightOfShadowNumX = 0.18;
+    if (heightOfShadow > 0) {
+        heightOfShadowNumY = 0.038 - heightOfShadow / 25000 ;
+        heightOfShadowNumX = 0.18 - heightOfShadow / 10000;
+    }
+
+    shadowScale = {heightOfShadowNumX, heightOfShadowNumY};
+    SpriteManager::getInstance().shadowTransform(&shadow,shadowScale);
+
+    shadow.setPosition(shadowPosition);
 }
