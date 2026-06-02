@@ -143,10 +143,10 @@ void HellHound::actionJumpAttack() {
 
     if (!unIntaraptebulAnimation) {
         if (faceingDirection == "left") {
-            velocity.x = 20;
+            velocity.x = 12;
         }
         else {
-            velocity.x = -20;
+            velocity.x = -12;
         }
         if (!isInAir) {
             setTexture("HellHoundJump");
@@ -241,10 +241,10 @@ void HellHound::hellHoundAI() {
         sf::Vector2f playrPos = getPositionOfPlayer();
 
         if (cooldownIsOffJump) {
-            if (playrPos.x > position.x + 200) {
+            if (playrPos.x > position.x + 150) {
                 actionWalkLeft();
             }
-            else if(playrPos.x < position.x - 200){
+            else if(playrPos.x < position.x - 150){
                 actionWalkRight();
             }
             else  {
@@ -259,7 +259,6 @@ void HellHound::hellHoundAI() {
                 actionWalkRight();
             }
         }
-
 }
 
 

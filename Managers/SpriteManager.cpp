@@ -5,7 +5,6 @@
 #include "SpriteManager.h"
 
 #include <iostream>
-#include <ostream>
 
 
 
@@ -34,7 +33,6 @@ void SpriteManager::setTextureToBackGroundSprite(std::string nameOfTexture, sf::
 
 
 void SpriteManager::switchSides(std::string direction, sf::Sprite *sprite) {
-
     sf::Vector2f scale = sprite->getScale();
 
     if (direction == "left")
@@ -56,7 +54,6 @@ void SpriteManager::hitBoxTransformation(sf::Sprite *sprite, sf::Vector2f scale,
     sprite->setColor(sf::Color(255,255,255,0));
     sprite->setScale(scale.x, scale.y);
     switchSides(direction, sprite);
-
 }
 
 void SpriteManager::shadowTransform(sf::Sprite *sprite, sf::Vector2f scale) {
@@ -113,7 +110,6 @@ void SpriteManager::resetAnimationTimer() {
     }
 }
 
-
 int SpriteManager::getIndexOfAnimation(sf::Sprite *sprite) {
     int indexOfAnimation =  sprite->getTextureRect().left;
     return indexOfAnimation;
@@ -125,4 +121,29 @@ int SpriteManager::getMaxIndexOfAnimation(sf::Sprite *sprite) {
 }
 void SpriteManager::rotateSprite(sf::Sprite *sprite, int angle) {
     sprite->setRotation(angle);
+}
+
+void SpriteManager::speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, float numOfBlure, std::string direction, float velocityX, bool dashIsActiveBool) {
+
+    if (dashIsActiveBool) {
+        if (clockOfBlure.getElapsedTime().asMilliseconds() >= numOfBlure) {
+            sf::Sprite spriteToBlur = *sprite;
+            spriteToBlur.setPosition(sprite->getPosition().x, sprite->getPosition().y);
+            oldPositionsOfPlayer.push_back({spriteToBlur,blureShadow});
+            clockOfBlure.restart();
+        }
+    }
+        for (auto &[spriteBlur, alpha] : oldPositionsOfPlayer) {
+            spriteBlur.setColor(sf::Color(255, 255, 255, alpha));
+            alpha = alpha - 28;
+
+            drawSprite(&spriteBlur,spriteBlur.getPosition().x, spriteBlur.getPosition().y, window );
+            if (alpha <= 0) {
+                oldPositionsOfPlayer.erase(oldPositionsOfPlayer.begin());
+            }
+        }
+
+
+
+
 }

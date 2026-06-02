@@ -82,6 +82,7 @@ void Entity::actionWalkLeft() {};
 void Entity::actionJump() {};
 void Entity::actionAttack() {};
 void Entity::actionSlide() {};
+void Entity::actionDash() {};
 
 void Entity::transformHitBoxAttack1() {};
 void Entity::transformHitBoxAttack2() {};

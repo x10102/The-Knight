@@ -24,20 +24,23 @@ UIManager::UIManager(int hp, sf::Vector2f posOutLine, sf::Vector2f posInLine,sf:
   TextureManager::getInstance().setTexture(nameOfDamageLine, &DamageBar);
   HPBarOutline.scale(4.5, 4.5);
   DamageBar.scale(4.5, 4.5);
+
+
+  TextureManager::getInstance().setTexture(nameOfTextureOutLine, &HPBarOutline);
+  TextureManager::getInstance().setTexture(nameOfTextureInLine, &HPBar);
+  TextureManager::getInstance().setTexture(nameOfDamageLine, &DamageBar);
+
+
 };
 
+
+
 void UIManager::updateUIHPBar(sf::RenderWindow& window, int hp, sf::Vector2f scale) {
-  float posX = EntityManager::getInstance().uMOfEntitys.at("Player")->position.x;
-  if (CameraManager::getInstance().viewCornerX < posX && CameraManager::getInstance().viewCornerXsecand > posX) {
-    posInLineDraw = posInLine.x - CameraManager::getInstance().idkOffSet  + posX;
-    posDamageBarDraw = posDamageBar.x - CameraManager::getInstance().idkOffSet  + posX;
-    posOutLineDraw  = posOutLine.x - CameraManager::getInstance().idkOffSet  + posX;
-  }
-  else {
-    posInLineDraw = posInLine.x;
-    posDamageBarDraw = posDamageBar.x;
-    posOutLineDraw  = posOutLine.x;
-  }
+    posInLineDraw = posInLine.x + window.getView().getCenter().x - window.getSize().x / 2;
+    posDamageBarDraw = posDamageBar.x + window.getView().getCenter().x - window.getSize().x / 2;
+    posOutLineDraw  = posOutLine.x + window.getView().getCenter().x - window.getSize().x / 2;
+
+
   SpriteManager::getInstance().transformSpriteHPBar(&HPBar,scale, hp);
   SpriteManager::getInstance().drawSprite(&HPBar, posInLineDraw,posInLine.y, window);
   if(hp < pastHP) {
@@ -55,7 +58,9 @@ void UIManager::updateUIHPBar(sf::RenderWindow& window, int hp, sf::Vector2f sca
   SpriteManager::getInstance().drawSprite(&HPBarOutline, posOutLineDraw ,posOutLine.y, window);
 
 
-  }
+}
+void UIManager::updateStaminabar(int stamina,sf::Clock timerStam, sf::RenderWindow &window) {
 
+}
 
 

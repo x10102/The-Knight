@@ -41,8 +41,8 @@ public:
 
     UIManager(int hp, sf::Vector2f posOutLine, sf::Vector2f posInLine,sf::Vector2f posDamageLine, std::string nameOfTextureOutLine, std::string nameOfSpriteOutLine, std::string nameOfDamageBar);
 
-
     void updateUIHPBar(sf::RenderWindow &window, int hp, sf::Vector2f scale);
+    void updateStaminabar(int stamina,sf::Clock staminaDash, sf::RenderWindow &window);
 };
 
 #endif //UIMANAGER_H

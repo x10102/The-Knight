@@ -19,7 +19,6 @@ public:
     }
 
     void updateHPbar(int hp, sf::RenderWindow &window);
-
 };
 
 

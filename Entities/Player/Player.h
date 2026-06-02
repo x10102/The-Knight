@@ -24,6 +24,10 @@ class Player : public Entity {
     //sf::Vector2f position;
     //sf::Vector2f velocity;
 
+    float Dashspeed = 17;
+    int dashNumOfUse = 2;
+    float dashCuldownSecund = 4.0f;
+
 public:
 
 
@@ -55,6 +59,8 @@ public:
         void actionAttack() override;
         void actionSlide() override;
         void beeingHitFunc() override;
+        void actionDash() override;
+        void dashIsActive();
 
         void passivActionStandStill() override;
 
@@ -62,6 +68,7 @@ public:
         void passivActionFalling() override;
         void passivActionGetHit(std::string fecingDirection, int damage) override;
         void passivActionDie() override;
+
 
 
         void shadowUpdate() override;

@@ -85,7 +85,6 @@ void EntityManager::hitEntity(Entity *entityRes, Entity *entityAttacking, int pa
             if (gameCanBeFreezd.getElapsedTime().asMilliseconds() >= intervalToFreez) {
                 preperToFreezGame(damage, entityRes, entityAttacking->faceingDirection, entityAttacking);
                 attacked = true;
-                std::cout << "HI" << std::endl;
             }
         }
     } else {
@@ -122,7 +121,6 @@ void EntityManager::freezingGame() {
     }
 
     if (gameIsFreezd) {
-        std::cout << forceToFreez << std::endl;
 
         if (gameIsFreezdClock.getElapsedTime().asMilliseconds() >= forceToFreez) {
             unFreezGame();
@@ -236,7 +234,6 @@ void EntityManager::colisionDetection(std::string nameOfEntity) {
                         if (entityColading->faceingDirection == "left") {
                             entityColading->velocity.x = 0;
                         }
-                        std::cout << entityColided->name << std::endl;
 
                     }
                 }

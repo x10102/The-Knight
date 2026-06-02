@@ -255,6 +255,12 @@ TextureManager::TextureManager() {
     }
     textures["platformEagRight"] = texture;
     numOfFramesTextures["platformEagRight"] = 1;
+
+    if (!texture.loadFromFile("../../textures/_Dash.png"))  {
+        throw std::runtime_error("Nelze načíst Idle texturu");
+    }
+    textures["dashKnight"] = texture;
+    numOfFramesTextures["dashKnight"] = 2;
 }
 
 

@@ -10,6 +10,10 @@
 #include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp"
 #include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp"
 
+#include <deque>
+#include <map>
+
+
 
 
 class SpriteManager{
@@ -26,6 +30,11 @@ class SpriteManager{
 
     const float intervalBetwenAnimations = 45.0f;
     sf::Clock timer;
+
+    std::vector<std::pair<sf::Sprite, float>> oldPositionsOfPlayer;
+    float blureShadow = 200;
+    float timeBetweneBlure = 50;
+    sf::Clock clockOfBlure;
 
     //Setap Sprite:
     void transfomration(sf::Sprite *sprite, sf::Vector2f scale, std::string direction, std::string currentTexture);
@@ -44,6 +53,12 @@ class SpriteManager{
     void resetAnimationTimer();
     void rotateSprite(sf::Sprite *sprite, int angle);
     void shadowTransform(sf::Sprite *sprite, sf::Vector2f scale);
+    void blureTransform(sf::Sprite *sprite, sf::Vector2f scale);
+
+
+    //Effects:
+
+    void speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, float numOfBlure, std::string direction, float velocityX, bool dashIsActiveBool);
 
 };
 

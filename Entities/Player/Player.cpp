@@ -8,6 +8,7 @@
 #include <ostream>
 
 #include "../../Managers/BackGroundManager.h"
+#include "../../Managers/SpawnManager.h"
 #include "../../UIdirectory/UI/PlayerUIHP.h"
 #include "SFML/Graphics/Sprite.hpp"
 #include "SFML/Window/Event.hpp"
@@ -44,24 +45,22 @@ void Player::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &envir
     if (!freez) {
         transformationSprite(currentTexture);
     }
-
     entityFallManagment();
     gravityAndGround(environmenAndPhysicsManager);
     if (!freez) {
         beeingHitFunc();
     }
+    if (!freez) {
+        dashIsActive();
+    }
 
     hitBoxUpdateposition();
     colisionDetectionEntityExtention(name);
-
-
 
     if (!freez) {
         movmentUpdate();
     }
     shadowUpdate();
-
-
 
 }
 
@@ -93,12 +92,7 @@ void Player::hitBoxUpdateposition() {
         colisionHitboxScale = sf::Vector2f(0.1f, 0.4f);
         colisionBoxPosition.x = position.x;
         colisionBoxPosition.y = position.y;
-
-
-
-
     }
-
 
     if (currentTexture == "attackKnight") {
         attackHitboxScale = sf::Vector2f(0.45f, 0.55f);
@@ -152,6 +146,13 @@ void Player::cooldowns_and_unIntraptebulActions() {
         invincibility = false;
     }
 
+    if (dashIsActiveClockCuldown.getElapsedTime().asSeconds() >= dashCuldownSecund) {
+        if (dashNumOfUse < 2) {
+            dashNumOfUse++;
+            dashIsActiveClockCuldown.restart();
+        }
+    }
+
 
     //attack finish animacion
     if (unIntaraptebulAnimation) {
@@ -192,6 +193,9 @@ void Player::input() {
                 isSliding = false;
                 unIteraptebulAnimLowPriority = true;
         }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && dashNumOfUse > 0) {
+            actionDash();
+        }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
             actionWalkLeft();
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
@@ -217,29 +221,27 @@ void Player::input() {
 }
 
 void Player::entityFallManagment() {
-
-
-    if (position.y + velocity.y + 1 < EnvironmenAndPhysicsManager::getInstance().floor) {
-        isInAir = true;
-    } else {
-        isInAir = false;
-        isFalling = false;
-        if (velocity.y != 0) {
-            lastVelocytyY = velocity.y;
-            slideCooldawn.restart();
-
-
+    if (!dashIsActiveBool) {
+        if (position.y + velocity.y + 1 < EnvironmenAndPhysicsManager::getInstance().floor) {
+            isInAir = true;
+        } else {
+            isInAir = false;
+            isFalling = false;
+            if (velocity.y != 0) {
+                lastVelocytyY = velocity.y;
+                slideCooldawn.restart();
+            }
         }
-    }
 
-    if (isInAir) {
-        if (!isColidingWithAPlatform) {
-            if (!gotHit) {
-                if (!isFalling) {
-                    passivActionBetwenFalling();
-                }
-                if (isFalling) {
-                    passivActionFalling();
+        if (isInAir) {
+            if (!isColidingWithAPlatform) {
+                if (!gotHit) {
+                    if (!isFalling) {
+                        passivActionBetwenFalling();
+                    }
+                    if (isFalling) {
+                        passivActionFalling();
+                    }
                 }
             }
         }
@@ -380,6 +382,48 @@ void Player::actionSlide() {
     }
 }
 
+void Player::actionDash() {
+    if (!dashIsActiveBool) {
+        if (faceingDirection == "right") {
+            if (isInAir) {
+                velocity.x = Dashspeed;
+            }
+            else {
+                velocity.x = Dashspeed * 1.2;
+            }
+        }
+        else if (faceingDirection == "left") {
+            if (isInAir) {
+                velocity.x = - Dashspeed ;
+            }
+            else {
+                velocity.x = - (Dashspeed * 1.2);
+            }
+        }
+        dashIsActiveBool = true;
+        dashIsActiveClock.restart();
+        dashNumOfUse = dashNumOfUse - 1;
+    }
+}
+
+void Player::dashIsActive() {
+
+        if (dashIsActiveBool) {
+                if (dashIsActiveClock.getElapsedTime().asMilliseconds() <= 130){
+                    velocity.y = 0;
+
+                    setTexture("dashKnight");
+                    unIntaraptebulAnimation = true;
+                    invincibility = true;
+                }
+                else {
+                    dashIsActiveBool =false;
+                    invincibility = false;
+                }
+            }
+
+}
+
 void Player::passivActionGetHit(std::string fecingDirection, int damage) {
     if (!invincibility) {
         if (!freez) {
@@ -426,8 +470,10 @@ void Player::passivActionStandStill() {
     if (!unIteraptebulAnimLowPriority) {
         if (!isInAir) {
             if (!unIntaraptebulAnimation) {
-                setTexture("idleKnight");
-                velocity.x = 0;
+                if (!dashIsActiveBool) {
+                    setTexture("idleKnight");
+                    velocity.x = 0;
+                }
             }
         }
     }
@@ -477,6 +523,9 @@ void Player::drawHitbox(sf::RenderWindow &window) {
 
 void Player::drawAdditions(sf::RenderWindow &window) {
     playerUIHP->getInstance().updateHPbar(hp, window);
+
+    SpriteManager::getInstance().speedBlurer(&sprite, window, 4, faceingDirection, velocity.x,dashIsActiveBool );
+
 
     SpriteManager::getInstance().drawSprite(&shadow, shadowPosition.x, shadowPosition.y, window);
 }

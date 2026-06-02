@@ -15,3 +15,5 @@ PlayerUIHP::PlayerUIHP() : UIManager(100, {50,30}, {67,44}, {67,44}, "hpBar", "h
 void PlayerUIHP::updateHPbar(int hp,sf::RenderWindow& window) {
     this->updateUIHPBar(window, hp, scale);
 }
+
+

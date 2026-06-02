@@ -72,6 +72,12 @@ public:
     bool cooldownIsOffJump = true;
     bool coolDawnIsOff = true;
     bool slideIsActiove = false;
+    bool dashIsActiveBool = false;
+    sf::Clock dashIsActiveClock;
+    sf::Clock dashIsActiveClockCuldown;
+
+    int dashNumOfUse = 2;
+    float dashCuldownSecund = 4.0f;
 
 
     sf::Sprite sprite;
@@ -144,7 +150,7 @@ public:
     virtual void actionJump();
     virtual void actionAttack();
     virtual void actionSlide();
-
+    virtual void actionDash();
 
     virtual void passivActionStandStill();
 

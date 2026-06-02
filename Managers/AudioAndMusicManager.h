@@ -25,7 +25,6 @@ class AudioAndMusicManager {
   std::map<std::string, sf::Music*> musicMap;
   std::map<std::string, sf::Sound*> soundMap;
 
-
 };
 
 

@@ -65,6 +65,8 @@ add_executable(untitled46 main.cpp
         Managers/AudioAndMusicManager.h
         Managers/CameraManager.cpp
         Managers/CameraManager.h
+        UIdirectory/UI/PlayerUIStamina.cpp
+        UIdirectory/UI/PlayerUIStamina.h
 )
 
 # Linkování SFML
