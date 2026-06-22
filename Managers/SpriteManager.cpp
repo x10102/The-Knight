@@ -10,6 +10,7 @@
 
 void SpriteManager::drawSprite(sf::Sprite *sprite, float x, float y, sf::RenderWindow& window) {
     sprite->setPosition(x,y);
+
     window.draw(*sprite);
 }
 
@@ -135,15 +136,11 @@ void SpriteManager::speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, fl
     }
         for (auto &[spriteBlur, alpha] : oldPositionsOfPlayer) {
             spriteBlur.setColor(sf::Color(255, 255, 255, alpha));
-            alpha = alpha - 28;
+            alpha = alpha - 30;
 
             drawSprite(&spriteBlur,spriteBlur.getPosition().x, spriteBlur.getPosition().y, window );
             if (alpha <= 0) {
                 oldPositionsOfPlayer.erase(oldPositionsOfPlayer.begin());
             }
         }
-
-
-
-
 }

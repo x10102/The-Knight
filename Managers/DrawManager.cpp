@@ -17,6 +17,11 @@ void DrawManager::drawGame(sf::RenderWindow &window, EnvironmenAndPhysicsManager
     for (auto it = entities.rbegin(); it != entities.rend(); ++it) {
         auto &[nameOfEntity, entity] = *it;
 
+        std::cout << entity->name << " " << entity->position.y << std::endl;
+
+        std::cout << entity->name << " " <<entity->sprite.getPosition().y<< std::endl;
+
+
         entity->drawEntity(window);
         entity->drawHitbox(window);
         entity->drawColisionHitBox(window);

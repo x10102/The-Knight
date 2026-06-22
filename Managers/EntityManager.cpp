@@ -10,6 +10,7 @@
 
 
 void EntityManager::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
+
     for (auto &[nameOfEntity, entity]: uMOfEntitys) {
         entity->update(window, environmenAndPhysicsManager);
     }

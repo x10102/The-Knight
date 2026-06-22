@@ -93,7 +93,6 @@ void HellHound::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &en
     }
     shadowUpdate();
 
-
 }
 
 void HellHound::passivActionStandStill() {

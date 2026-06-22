@@ -261,6 +261,19 @@ TextureManager::TextureManager() {
     }
     textures["dashKnight"] = texture;
     numOfFramesTextures["dashKnight"] = 2;
+
+    if (!texture.loadFromFile("../../textures/staminaBar.png"))  {
+        throw std::runtime_error("Nelze načíst Idle texturu");
+    }
+    textures["staminaBar"] = texture;
+    numOfFramesTextures["staminaBar"] = 1;
+
+
+    if (!texture.loadFromFile("../../textures/staminaLine.png"))  {
+        throw std::runtime_error("Nelze načíst Idle texturu");
+    }
+    textures["staminaLine"] = texture;
+    numOfFramesTextures["staminaLine"] = 1;
 }
 
 

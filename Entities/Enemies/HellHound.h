@@ -15,7 +15,7 @@ class Entity;
 class HellHound : public Entity {
 
     int hp = 25;
-    int attackBite = 10;
+    int attackBite = 40;
     float offSet;
 
 public:

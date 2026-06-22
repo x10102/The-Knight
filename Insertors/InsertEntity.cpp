@@ -6,9 +6,9 @@
 #include "../Managers/EntityManager.h"
 #include <string>
 
+#include "../Entities/Entity.h"
 
 
 void InsertEntity::insertEntity(std::string entityName, Entity* entity) {
     entityManager.uMOfEntitys[entityName] = entity;
-    entityManager.uMOfDrawEntitys[entityName]= entity;
 }

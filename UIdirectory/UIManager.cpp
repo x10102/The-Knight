@@ -25,14 +25,11 @@ UIManager::UIManager(int hp, sf::Vector2f posOutLine, sf::Vector2f posInLine,sf:
   HPBarOutline.scale(4.5, 4.5);
   DamageBar.scale(4.5, 4.5);
 
-
   TextureManager::getInstance().setTexture(nameOfTextureOutLine, &HPBarOutline);
   TextureManager::getInstance().setTexture(nameOfTextureInLine, &HPBar);
   TextureManager::getInstance().setTexture(nameOfDamageLine, &DamageBar);
 
-
 };
-
 
 
 void UIManager::updateUIHPBar(sf::RenderWindow& window, int hp, sf::Vector2f scale) {
@@ -54,12 +51,13 @@ void UIManager::updateUIHPBar(sf::RenderWindow& window, int hp, sf::Vector2f sca
     cooldownOnHit.restart();
   }
 
-
   SpriteManager::getInstance().drawSprite(&HPBarOutline, posOutLineDraw ,posOutLine.y, window);
-
 
 }
 void UIManager::updateStaminabar(int stamina,sf::Clock timerStam, sf::RenderWindow &window) {
+  posInLineDraw = posInLine.x + window.getView().getCenter().x - window.getSize().x / 2;
+  posDamageBarDraw = posDamageBar.x + window.getView().getCenter().x - window.getSize().x / 2;
+  posOutLineDraw  = posOutLine.x + window.getView().getCenter().x - window.getSize().x / 2;
 
 }
 

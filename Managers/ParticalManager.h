@@ -27,6 +27,7 @@ public:
     void spawnBloodSplash(sf::Vector2f spawnPos, std::string direction, bool kill);
     void spawnHellHoundGore(sf::Vector2f spawnPos, sf::Vector2f spanwVel, std::string direction, std::string nameOfTexture);
 
+
 };
 
 #endif //PARTICALMANAGER_H

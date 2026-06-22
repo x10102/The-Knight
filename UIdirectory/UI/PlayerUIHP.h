@@ -8,6 +8,7 @@
 
 
 class PlayerUIHP : public UIManager {
+
     PlayerUIHP();
 
     sf::Vector2f scale;

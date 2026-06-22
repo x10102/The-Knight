@@ -47,6 +47,9 @@ int main() {
 
         window.clear();
 
+
+
+
         entityManager.update(window, environmenAndPhysicsManager);
         BackGroundManager::getInstance().logicOfBackground(window);
         CameraManager::getInstance().CameraUpdate(window);

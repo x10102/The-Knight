@@ -259,7 +259,7 @@ void Player::actionWalkRight() {
                 }
                 faceingDirection = "right";
                 if (velocity.x > 7) {
-                    velocity.x--;
+                    velocity.x = velocity.x - 0.8;
                 } else {
                     velocity.x = 7;
                 }
@@ -278,7 +278,7 @@ void Player::actionWalkLeft() {
                 setTexture("runKnight");
                 faceingDirection = "left";
                 if (velocity.x < -7) {
-                    velocity.x++;
+                    velocity.x = velocity.x + 0.8;
                 } else {
                     velocity.x = -7;
                 }

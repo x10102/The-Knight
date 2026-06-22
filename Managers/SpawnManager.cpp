@@ -29,6 +29,8 @@ void SpawnManager::spawnBloodSplash(sf::Vector2f spawnPosition, sf::Vector2f spa
     std::string name = "BloodSplash" + std::to_string(id);
     id++;
 
+    std::cout << "Spawning BloodSplash" << std::endl;
+
 
     BloodSplash* blood_splash = new BloodSplash(spawnPosition,spawnVelocity, name, direction,kill);
     insertEntity->getInstance().insertEntity(name,blood_splash);
