@@ -33,7 +33,7 @@ public:
 
 
 
-        bool cancalJump = false;
+    bool cancelJump = false;
     bool isSliding = false;
 
         Player(sf::Vector2f position,sf::Vector2f velocity);
@@ -58,7 +58,7 @@ public:
         void actionJump() override;
         void actionAttack() override;
         void actionSlide() override;
-        void beeingHitFunc() override;
+        void beingHitFunc() override;
         void actionDash() override;
         void dashIsActive();
 

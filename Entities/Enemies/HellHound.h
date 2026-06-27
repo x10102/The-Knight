@@ -48,7 +48,7 @@ public:
     void passivActionStandStill() override;
     void passivActionGetHit(std::string fecingDirection, int damage) override;
     void passivActionDie() override;
-    void beeingHitFunc() override;
+    void beingHitFunc() override;
 
 
 

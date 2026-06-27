@@ -4,9 +4,6 @@
 
 #include "BackGroundManager.h"
 
-#include <iostream>
-#include <ostream>
-
 #include "CameraManager.h"
 
 BackGroundManager::BackGroundManager(){
@@ -67,41 +64,41 @@ void BackGroundManager::logicOfBackground(sf::RenderWindow& window) {
 void BackGroundManager::drawBackground(sf::RenderWindow &window) {
 
 
-spriteManager->getInstance().drawSprite(&backgroundClouds, backGroundFull, 0, window);
+    spriteManager->getInstance().drawSprite(&backgroundClouds, backGroundFull, 0, window);
 
-spriteManager->getInstance().drawSprite(&backgroundClouds, backGroundFull + 1152, 0, window);
+    spriteManager->getInstance().drawSprite(&backgroundClouds, backGroundFull + 1152, 0, window);
 
-spriteManager->getInstance().drawSprite(&backgroundClouds, backGroundFull + 2048, 0, window);
-
-
-spriteManager->getInstance().drawSprite(&backgroundTown, backGround, 0, window);
-spriteManager->getInstance().drawSprite(&backgroundTown, backGround + 1152,0, window);
-spriteManager->getInstance().drawSprite(&backgroundTown, backGround + 2048, 0, window);
+    spriteManager->getInstance().drawSprite(&backgroundClouds, backGroundFull + 2048, 0, window);
 
 
-for (int i = 0; i < 400; i++) {
-    sf::IntRect rect3 =  floor.getTextureRect();
-    if (crackedBrickIsPlased) {
-        xOfFloor = rect3.width * i* 2;
-        crackedBrickIsPlased = false;
+    spriteManager->getInstance().drawSprite(&backgroundTown, backGround, 0, window);
+    spriteManager->getInstance().drawSprite(&backgroundTown, backGround + 1152,0, window);
+    spriteManager->getInstance().drawSprite(&backgroundTown, backGround + 2048, 0, window);
+
+
+    for (int i = 0; i < 400; i++) {
+        sf::IntRect rect3 =  floor.getTextureRect();
+        if (crackedBrickIsPlased) {
+            xOfFloor = rect3.width * i* 2;
+            crackedBrickIsPlased = false;
+        }
+        else {
+            xOfFloor = rect3.width * i;
+        }
+
+        if (!(i % 12 == 0) && !(i % 15 == 0) && !(i % 20 == 0)) {
+            spriteManager->getInstance().drawSprite(&floor2, floorDist + xOfFloor, 757.5, window);
+        }
+        else {
+            spriteManager->getInstance().drawSprite(&floor,floorDist + xOfFloor, 757.5, window);
+            crackedBrickIsPlased = true;
+        }
     }
-    else {
-        xOfFloor = rect3.width * i;
-    }
 
-    if (!(i % 12 == 0) && !(i % 15 == 0) && !(i % 20 == 0)) {
-        spriteManager->getInstance().drawSprite(&floor2, floorDist + xOfFloor, 757.5, window);
-    }
-    else {
-        spriteManager->getInstance().drawSprite(&floor,floorDist + xOfFloor, 757.5, window);
-        crackedBrickIsPlased = true;
-    }
-}
+    spriteManager->getInstance().drawSprite(&backgroundHouse2,  midGround + 720, 352, window);
 
-spriteManager->getInstance().drawSprite(&backgroundHouse2,  midGround + 720, 352, window);
+    spriteManager->getInstance().drawSprite(&backgroundHouse2,  midGround + 1800, 352, window);
 
-spriteManager->getInstance().drawSprite(&backgroundHouse2,  midGround + 1800, 352, window);
-
-spriteManager->getInstance().drawSprite(&backgroundHouse1,  frontGround, 352, window);
+    spriteManager->getInstance().drawSprite(&backgroundHouse1,  frontGround, 352, window);
 
 }

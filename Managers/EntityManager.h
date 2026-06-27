@@ -7,8 +7,6 @@
 #include <map>
 #include <unordered_map>
 
-#include "iostream"
-
 #include "SpriteManager.h"
 #include "../Entities/Entity.h"
 #include "../Managers/EnvironmenAndPhysicsManager.h"

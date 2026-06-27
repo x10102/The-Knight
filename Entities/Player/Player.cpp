@@ -26,34 +26,34 @@ Player::Player(sf::Vector2f position, sf::Vector2f velocity) : Entity(position, 
 
     attackHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
-    colisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
+    collisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
     shadow.setTexture(TextureManager::getInstance().textures["shedowOfEntity"]);
 
     //docasne}
 
     scale = sf::Vector2f(x, y);
-    faceingDirection = "right";
+    facingDirection = "right";
 
 }
 
 void Player::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
     entityFallManagment(environmenAndPhysicsManager);
 
-    if (!freez) {
+    if (!freeze) {
         cooldowns_and_unIntraptebulActions();
         input();
         transformationSprite(currentTexture);
     }
-    if (!freez) {
-        beeingHitFunc();
+    if (!freeze) {
+        beingHitFunc();
         dashIsActive();
     }
 
     hitBoxUpdateposition();
     colisionDetectionEntityExtention(name);
 
-    if (!freez) {
+    if (!freeze) {
         movmentUpdate();
     }
     shadowUpdate();
@@ -65,36 +65,36 @@ void Player::hitBoxUpdateposition() {
 
     if (currentTexture == "SlideKnight") {
         hitboxScale = sf::Vector2f(0.2f, 0.3);
-        if (faceingDirection == "right") {
+        if (facingDirection == "right") {
             hitBoxPosition.x = position.x;
-        } else if (faceingDirection == "left") {
+        } else if (facingDirection == "left") {
             hitBoxPosition.x = position.x;
         }
         hitBoxPosition.y = position.y;
 
-        colisionHitboxScale = sf::Vector2f(0.12f, 0.2f);
-        colisionBoxPosition.x = position.x;
-        colisionBoxPosition.y = position.y;
+        collisionHitboxScale = sf::Vector2f(0.12f, 0.2f);
+        collisionBoxPosition.x = position.x;
+        collisionBoxPosition.y = position.y;
 
     } else {
         hitboxScale = sf::Vector2f(0.12f, 0.35f);
-        if (faceingDirection == "right") {
+        if (facingDirection == "right") {
             hitBoxPosition.x = position.x - 12;
-        } else if (faceingDirection == "left") {
+        } else if (facingDirection == "left") {
             hitBoxPosition.x = position.x + 12;
         }
         hitBoxPosition.y = position.y;
 
-        colisionHitboxScale = sf::Vector2f(0.1f, 0.4f);
-        colisionBoxPosition.x = position.x;
-        colisionBoxPosition.y = position.y;
+        collisionHitboxScale = sf::Vector2f(0.1f, 0.4f);
+        collisionBoxPosition.x = position.x;
+        collisionBoxPosition.y = position.y;
     }
 
     if (currentTexture == "attackKnight") {
         attackHitboxScale = sf::Vector2f(0.45f, 0.55f);
-        if (faceingDirection == "right") {
+        if (facingDirection == "right") {
             attackHitBoxPosition.x = position.x + 70;
-        } else if (faceingDirection == "left") {
+        } else if (facingDirection == "left") {
             attackHitBoxPosition.x = position.x - 70;
         }
         attackHitBoxPosition.y = position.y;
@@ -102,16 +102,16 @@ void Player::hitBoxUpdateposition() {
 
     if (currentTexture == "SaccendAttackKnight") {
         attackHitboxScale = sf::Vector2f(0.55f, 0.45f);
-        if (faceingDirection == "right") {
+        if (facingDirection == "right") {
             attackHitBoxPosition.x = position.x + 25;
-        } else if (faceingDirection == "left") {
+        } else if (facingDirection == "left") {
             attackHitBoxPosition.x = position.x - 25;
         }
         attackHitBoxPosition.y = position.y;
     }
 
 
-    colisionHitBox.setPosition(colisionBoxPosition);
+    collisionHitBox.setPosition(collisionBoxPosition);
     hitBox.setPosition(hitBoxPosition);
     attackHitBox.setPosition(attackHitBoxPosition);
 }
@@ -131,49 +131,49 @@ void Player::cooldowns_and_unIntraptebulActions() {
     //cooldawns:
 
     //attack Cooldawn:
-    if (attackCooldawn.getElapsedTime().asMilliseconds() >= intervalBetwenAttacks) {
-        coolDawnIsOff = true;
+    if (attackCooldown.getElapsedTime().asMilliseconds() >= intervalBetweenAttacks) {
+        coolDownIsOff = true;
     }
-    if (slideCooldawn.getElapsedTime().asMilliseconds() > intervelToSlide) {
-        lastVelocytyY = 0;
+    if (slideCooldown.getElapsedTime().asMilliseconds() > intervalToSlide) {
+        lastVelocityY = 0;
     }
 
     if (invincClock.getElapsedTime().asMilliseconds() >= invincibilityTime) {
         invincibility = false;
     }
 
-    if (dashIsActiveClockCuldown.getElapsedTime().asSeconds() >= dashCuldownSecund) {
+    if (dashIsActiveClockCooldown.getElapsedTime().asSeconds() >= dashCuldownSecund) {
         if (dashNumOfUse < 2) {
             dashNumOfUse++;
-            dashIsActiveClockCuldown.restart();
+            dashIsActiveClockCooldown.restart();
         }
     }
 
 
     //attack finish animacion
-    if (unIntaraptebulAnimation) {
+    if (uninterruptableAnimation) {
         if (spriteManager->getInstance().getIndexOfAnimation(&sprite) >= spriteManager->getInstance().
             getMaxIndexOfAnimation(&sprite) - 120) {
-            unIntaraptebulAnimation = false;
-            unIteraptebulAnimLowPriority = false;
+            uninterruptableAnimation = false;
+            uninterruptableAnimLowPriority = false;
             attackHitBoxIsActive = false;
-            coolDawnIsOff = false;
+            coolDownIsOff = false;
             passivActionStandStill();
-            attackCooldawn.restart();
+            attackCooldown.restart();
         }
     }
-    if (unIteraptebulAnimLowPriority) {
+    if (uninterruptableAnimLowPriority) {
         if (spriteManager->getInstance().getIndexOfAnimation(&sprite) >= spriteManager->getInstance().
             getMaxIndexOfAnimation(&sprite) - 120) {
-            unIteraptebulAnimLowPriority = false;
+            uninterruptableAnimLowPriority = false;
             }
     }
 
 
     if (velocity.x == 0) {
-        slideIsActiove = false;
+        slideIsActive = false;
     } else {
-        slideIsActiove = true;
+        slideIsActive = true;
     }
 }
 
@@ -182,12 +182,12 @@ void Player::input() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) &&
             sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
             passivActionStandStill();
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C) && slideIsActiove) {
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C) && slideIsActive) {
             actionSlide();
         } else if (isSliding) {
                 setTexture("SlideTransitionEndKnight");
                 isSliding = false;
-                unIteraptebulAnimLowPriority = true;
+                uninterruptableAnimLowPriority = true;
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && dashNumOfUse > 0) {
             actionDash();
@@ -205,11 +205,11 @@ void Player::input() {
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
             actionJump();
-        } else if (cancalJump) {
+        } else if (cancelJump) {
             if (velocity.y <= -10) {
                 velocity.y = -10;
             }
-            cancalJump = false;
+            cancelJump = false;
         }
         passivActionStuck();
     }
@@ -223,16 +223,16 @@ void Player::entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysi
         } else {
             setEntityOnFloor();
             if (velocity.y != 0) {
-                lastVelocytyY = velocity.y;
-                slideCooldawn.restart();
+                lastVelocityY = velocity.y;
+                slideCooldown.restart();
             }
         }
-        if (isColidingWithAPlatform) {
+        if (isCollidingWithPlatform) {
             isInAir = false;
         }
 
         if (isInAir) {
-            if (!isColidingWithAPlatform) {
+            if (!isCollidingWithPlatform) {
                 if (!gotHit) {
                     if (!isFalling) {
                         passivActionBetwenFalling();
@@ -251,20 +251,20 @@ void Player::entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysi
 //Action:
 void Player::actionWalkRight() {
 
-    if (!unIntaraptebulAnimation) {
+    if (!uninterruptableAnimation) {
 
             if (!isInAir) {
-                if (!unIteraptebulAnimLowPriority) {
+                if (!uninterruptableAnimLowPriority) {
                     setTexture("runKnight");
                 }
-                faceingDirection = "right";
+                facingDirection = "right";
                 if (velocity.x > 7) {
                     velocity.x = velocity.x - 0.8;
                 } else {
                     velocity.x = 7;
                 }
             } else {
-                faceingDirection = "right";
+                facingDirection = "right";
                 if (velocity.x <= 6) {
                     velocity.x++;
                 }
@@ -273,19 +273,19 @@ void Player::actionWalkRight() {
 }
 
 void Player::actionWalkLeft() {
-    if (!unIntaraptebulAnimation) {
+    if (!uninterruptableAnimation) {
             if (!isInAir) {
                 setTexture("runKnight");
-                faceingDirection = "left";
+                facingDirection = "left";
                 if (velocity.x < -7) {
                     velocity.x = velocity.x + 0.8;
                 } else {
                     velocity.x = -7;
                 }
-                std::cout << isColidingWithAPlatform << std::endl;
+                std::cout << isCollidingWithPlatform << std::endl;
 
             } else {
-                faceingDirection = "left";
+                facingDirection = "left";
                 if (velocity.x >= -6) {
                     velocity.x--;
                 }
@@ -294,20 +294,20 @@ void Player::actionWalkLeft() {
 }
 
 void Player::actionAttack() {
-    if (!unIntaraptebulAnimation) {
-        if (coolDawnIsOff) {
-            unIntaraptebulAnimation = true;
+    if (!uninterruptableAnimation) {
+        if (coolDownIsOff) {
+            uninterruptableAnimation = true;
             setTexture("attackKnight");
             if (!isInAir) {
                 velocity.x = 0;
             }
-            SeccnadAttackIsActive = true;
+            SecondAttackActive = true;
 
             transformHitBoxAttack1();
-        } else if (SeccnadAttackIsActive) {
-            unIntaraptebulAnimation = true;
+        } else if (SecondAttackActive) {
+            uninterruptableAnimation = true;
             setTexture("SaccendAttackKnight");
-            SeccnadAttackIsActive = false;
+            SecondAttackActive = false;
 
             if (!isInAir) {
                 velocity.x = 0;
@@ -324,60 +324,60 @@ void Player::actionJump() {
             if (isSliding) {
                 setTexture("SlideTransitionEndKnight");
                 isSliding = false;
-                unIteraptebulAnimLowPriority = true;
+                uninterruptableAnimLowPriority = true;
             }
 
             velocity.y = -20;
-            if (!unIteraptebulAnimLowPriority) {
+            if (!uninterruptableAnimLowPriority) {
                 setTexture("JumpKnight");
             }
-            cancalJump = true;
-            unIteraptebulAnimLowPriority = true;
+            cancelJump = true;
+            uninterruptableAnimLowPriority = true;
         }
 
 }
 
 
 void Player::actionSlide() {
-    if (!unIntaraptebulAnimation) {
+    if (!uninterruptableAnimation) {
         if (!isInAir) {
 
             if (isSliding) {
-                if (!unIteraptebulAnimLowPriority) {
+                if (!uninterruptableAnimLowPriority) {
                     setTexture("SlideKnight");
                 }
             }
 
             if (!isSliding) {
-                if (!unIteraptebulAnimLowPriority) {
+                if (!uninterruptableAnimLowPriority) {
                     setTexture("SlideTransitionStartKnight");
                     isSliding = true;
-                    unIteraptebulAnimLowPriority = true;
+                    uninterruptableAnimLowPriority = true;
                 }
             }
 
             if (velocity.x < 0.3 && velocity.x > -0.3) {
 
                 if (isSliding) {
-                    if (!unIteraptebulAnimLowPriority) {
+                    if (!uninterruptableAnimLowPriority) {
                         setTexture("SlideTransitionEndKnight");
                         isSliding = false;
-                        unIteraptebulAnimLowPriority = true;
+                        uninterruptableAnimLowPriority = true;
                     }
                 }
-                if (!unIteraptebulAnimLowPriority) {
+                if (!uninterruptableAnimLowPriority) {
                     setTexture("idleKnight");
                 }
-                lastVelocytyY = 0;
+                lastVelocityY = 0;
                 velocity.x = 0;
             }
 
-            if (faceingDirection == "right") {
-                velocity.x = velocity.x + lastVelocytyY / 2.5;
+            if (facingDirection == "right") {
+                velocity.x = velocity.x + lastVelocityY / 2.5;
             } else {
-                velocity.x = velocity.x - lastVelocytyY / 2.5;
+                velocity.x = velocity.x - lastVelocityY / 2.5;
             }
-            lastVelocytyY = 0;
+            lastVelocityY = 0;
 
             velocity.x = velocity.x / 1.02;
         }
@@ -385,8 +385,9 @@ void Player::actionSlide() {
 }
 
 void Player::actionDash() {
+    std::cout << "actionDash called" << std::endl;
     if (!dashIsActiveBool) {
-        if (faceingDirection == "right") {
+        if (facingDirection == "right") {
             if (isInAir) {
                 velocity.x = Dashspeed;
             }
@@ -394,7 +395,7 @@ void Player::actionDash() {
                 velocity.x = Dashspeed * 1.2;
             }
         }
-        else if (faceingDirection == "left") {
+        else if (facingDirection == "left") {
             if (isInAir) {
                 velocity.x = - Dashspeed ;
             }
@@ -415,7 +416,7 @@ void Player::dashIsActive() {
                     velocity.y = 0;
 
                     setTexture("dashKnight");
-                    unIntaraptebulAnimation = true;
+                    uninterruptableAnimation = true;
                     invincibility = true;
                 }
                 else {
@@ -428,17 +429,17 @@ void Player::dashIsActive() {
 
 void Player::passivActionGetHit(std::string fecingDirection, int damage) {
     if (!invincibility) {
-        if (!freez) {
+        if (!freeze) {
             if (!gotHit) {
                 attackHitBoxIsActive = false;
-                unIntaraptebulAnimation = false;
+                uninterruptableAnimation = false;
                 setTexture("HitKnight");
                 if (fecingDirection == "right") {
                     velocity.x = -11;
                 } else if (fecingDirection == "left") {
                     velocity.x = 11;
                 }
-                beeingHit.restart();
+                beingHit.restart();
                 gotHit = true;
 
 
@@ -455,9 +456,9 @@ void Player::passivActionGetHit(std::string fecingDirection, int damage) {
 void Player::passivActionDie() {
 }
 
-void Player::beeingHitFunc() {
+void Player::beingHitFunc() {
     if (gotHit) {
-        if (beeingHit.getElapsedTime().asMilliseconds() <= beeingHitPlayerIntervalKnight) {
+        if (beingHit.getElapsedTime().asMilliseconds() <= beingHitPlayerIntervalKnight) {
             velocity.x = velocity.x / 1.1;
         } else {
             velocity.x = 0;
@@ -469,9 +470,9 @@ void Player::beeingHitFunc() {
 
 //passiv Actions:
 void Player::passivActionStandStill() {
-    if (!unIteraptebulAnimLowPriority) {
+    if (!uninterruptableAnimLowPriority) {
         if (!isInAir) {
-            if (!unIntaraptebulAnimation) {
+            if (!uninterruptableAnimation) {
                 if (!dashIsActiveBool) {
                     setTexture("idleKnight");
                     velocity.x = 0;
@@ -482,22 +483,22 @@ void Player::passivActionStandStill() {
 }
 
 void Player::passivActionBetwenFalling() {
-        if (!unIntaraptebulAnimation) {
-            if (!unIteraptebulAnimLowPriority) {
+        if (!uninterruptableAnimation) {
+            if (!uninterruptableAnimLowPriority) {
                 setTexture("JumpFallInbetweenKnight");
             }
             isFalling = true;
 
 
 
-            unIteraptebulAnimLowPriority = true;
+            uninterruptableAnimLowPriority = true;
         }
 
 }
 
 void Player::passivActionFalling() {
-    if (!unIteraptebulAnimLowPriority) {
-        if (!unIntaraptebulAnimation) {
+    if (!uninterruptableAnimLowPriority) {
+        if (!uninterruptableAnimation) {
             setTexture("FallKnight");
         }
     }
@@ -509,12 +510,12 @@ void Player::movmentUpdate() {
     position.x += velocity.x;
     hitBoxPosition.x += velocity.x;
     attackHitBoxPosition.x += velocity.x;
-    colisionBoxPosition.x += velocity.x;
+    collisionBoxPosition.x += velocity.x;
 
     position.y += velocity.y;
     hitBoxPosition.y += velocity.y;
     attackHitBoxPosition.y += velocity.y;
-    colisionBoxPosition.y += velocity.y;
+    collisionBoxPosition.y += velocity.y;
 }
 
 
@@ -529,20 +530,20 @@ void Player::drawHitbox(sf::RenderWindow &window) {
 void Player::drawAdditions(sf::RenderWindow &window) {
     playerUIHP->getInstance().updateHPbar(hp, window);
 
-    SpriteManager::getInstance().speedBlurer(&sprite, window, 4, faceingDirection, velocity.x,dashIsActiveBool );
+    SpriteManager::getInstance().speedBlurer(&sprite, window, 4, facingDirection, velocity.x,dashIsActiveBool );
 
     SpriteManager::getInstance().drawSprite(&shadow, shadowPosition.x, shadowPosition.y, window);
 }
 
 void Player::drawColisionHitBox(sf::RenderWindow &window) {
-    SpriteManager::getInstance().drawSprite(&colisionHitBox, colisionBoxPosition.x,  colisionBoxPosition.y, window);
+    SpriteManager::getInstance().drawSprite(&collisionHitBox, collisionBoxPosition.x,  collisionBoxPosition.y, window);
 }
 
 void Player::shadowUpdate() {
-    if (faceingDirection == "right") {
+    if (facingDirection == "right") {
         shadowPosition.x = position.x - 12;
     }
-    else if (faceingDirection == "left") {
+    else if (facingDirection == "left") {
         shadowPosition.x = position.x + 12;
     }
     shadowPosition.y = EnvironmenAndPhysicsManager::getInstance().floor + 5;

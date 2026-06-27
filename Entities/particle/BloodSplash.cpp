@@ -28,7 +28,7 @@ BloodSplash::BloodSplash(sf::Vector2f position, sf::Vector2f velocity, std::stri
     this->name = name;
     scale = sf::Vector2f(x,y);
 
-    faceingDirection = direction;
+    facingDirection = direction;
     transformationSprite(currentTexture);
 
 }
@@ -36,7 +36,7 @@ BloodSplash::BloodSplash(sf::Vector2f position, sf::Vector2f velocity, std::stri
 
 void BloodSplash::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
 
-    if (!freez) {
+    if (!freeze) {
         transformationSprite(currentTexture);
 
         cooldowns_and_unIntraptebulActions();
