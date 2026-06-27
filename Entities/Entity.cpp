@@ -65,7 +65,7 @@ void Entity::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &envir
 
 void Entity::cooldowns_and_unIntraptebulActions() {};
 
-void Entity::entityFallManagment() {};
+void Entity::entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {};
 
 
 void Entity::freezEntity() {
@@ -112,7 +112,7 @@ sf::Sprite &Entity::getSpriteOfEntity() {
   return sprite;
 }
 void Entity::gravityAndGround(EnvironmenAndPhysicsManager &environmenAndPhysicsManage) {
-  environmenAndPhysicsManage.groundeAndGravity(position, velocity, freez,ignoreFloor);
+  environmenAndPhysicsManage.groundeAndGravity(position, velocity, freez,ignoreFloor, isColidingWithAPlatform);
 }
 void Entity::rotateSprite() {
   spriteManager->getInstance().rotateSprite(&sprite, angle);
@@ -132,3 +132,35 @@ void Entity::setVelocity(sf::Vector2f newVelocity) {
 }
 
 void Entity::shadowUpdate() {}
+
+void Entity::setEntityOnFloor() {
+  if (isInAir) {
+    boundEntity = true;
+  }
+  isInAir = false;
+  isFalling = false;
+}
+
+void Entity::impactBound() {
+  if (boundEntity) {
+
+    if (!retretBouncing) {
+      if (scale.y  >= impactBand) {
+        scale.y -= 0.1;
+      }
+      else {
+        retretBouncing = true;
+      }
+    }
+    if (retretBouncing) {
+      if (scale.y < trueScale.y) {
+        scale.y += 0.1;
+
+      }
+      else {
+        retretBouncing = false;
+        boundEntity = false;
+      }
+    }
+  }
+}

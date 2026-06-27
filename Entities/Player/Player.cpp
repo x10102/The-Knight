@@ -19,6 +19,7 @@ Player::Player(sf::Vector2f position, sf::Vector2f velocity) : Entity(position, 
     float x = 2.2f;
     float y = 2.2f;
 
+    trueScale = sf::Vector2f(x, y);
     //Docasne:{
 
     hitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
@@ -37,13 +38,13 @@ Player::Player(sf::Vector2f position, sf::Vector2f velocity) : Entity(position, 
 }
 
 void Player::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
+    entityFallManagment(environmenAndPhysicsManager);
+
     if (!freez) {
         cooldowns_and_unIntraptebulActions();
         input();
         transformationSprite(currentTexture);
     }
-    entityFallManagment();
-    gravityAndGround(environmenAndPhysicsManager);
     if (!freez) {
         beeingHitFunc();
         dashIsActive();
@@ -214,17 +215,20 @@ void Player::input() {
     }
 }
 
-void Player::entityFallManagment() {
+void Player::entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
     if (!dashIsActiveBool) {
+        impactBound();
         if (position.y + velocity.y + 1 < EnvironmenAndPhysicsManager::getInstance().floor) {
             isInAir = true;
         } else {
-            isInAir = false;
-            isFalling = false;
+            setEntityOnFloor();
             if (velocity.y != 0) {
                 lastVelocytyY = velocity.y;
                 slideCooldawn.restart();
             }
+        }
+        if (isColidingWithAPlatform) {
+            isInAir = false;
         }
 
         if (isInAir) {
@@ -240,6 +244,8 @@ void Player::entityFallManagment() {
             }
         }
     }
+    gravityAndGround(environmenAndPhysicsManager);
+
 }
 
 //Action:
@@ -276,6 +282,8 @@ void Player::actionWalkLeft() {
                 } else {
                     velocity.x = -7;
                 }
+                std::cout << isColidingWithAPlatform << std::endl;
+
             } else {
                 faceingDirection = "left";
                 if (velocity.x >= -6) {
@@ -479,6 +487,9 @@ void Player::passivActionBetwenFalling() {
                 setTexture("JumpFallInbetweenKnight");
             }
             isFalling = true;
+
+
+
             unIteraptebulAnimLowPriority = true;
         }
 

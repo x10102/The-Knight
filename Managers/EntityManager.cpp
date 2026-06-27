@@ -18,6 +18,7 @@ void EntityManager::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager
     chackHowLongToFreez();
     SpriteManager::getInstance().resetAnimationTimer();
     killEntities();
+
 }
 
 sf::Vector2f EntityManager::getPositionOfEntity(std::string nameOfEntity) {
@@ -44,7 +45,6 @@ void EntityManager::checkEntityHitBox() {
                         uMOfEntitys.at("Player")->getAttackHitbox()->getGlobalBounds())) {
                         uMOfEntitys.at("Player")->setEntityAsInvincibul(40);
                         hitEntity(entityAttacking, uMOfEntitys.at("Player"), 2);
-
                     }
                 }
             }
@@ -84,7 +84,7 @@ void EntityManager::hitEntity(Entity *entityRes, Entity *entityAttacking, int pa
         if (spriteOfKnight.getTextureRect().left >= sizeOftexture /5) {
             entityRes->passivActionGetHit(entityAttacking->faceingDirection, damage);
             if (damage > 30) {
-                freezTheGame(damage * 3);
+                freezTheGame(damage * 2);
             }
         }
 
@@ -101,7 +101,6 @@ void EntityManager::freezTheGame(int damage) {
         gameIsFreezd = true;
         timerFreez.restart();
         freezTime = damage;
-        std::cout<<"donee-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-"<<std::endl;
 
     }
 }
@@ -111,6 +110,7 @@ void EntityManager::unFreezTheGame() {
     }
     gameIsFreezd = false;
 }
+
 void EntityManager::chackHowLongToFreez() {
     if (gameIsFreezd) {
         if (timerFreez.getElapsedTime().asMilliseconds() > freezTime) {
@@ -167,9 +167,7 @@ void EntityManager::colisionDetection(std::string nameOfEntity) {
                         if ( entityColading->velocity.y > 0) {
                             entityColading->velocity.y -= EnvironmenAndPhysicsManager::getInstance().gravityPower;
 
-
-                            uMOfEntitys.at(nameOfEntity)->isInAir = false;
-                            uMOfEntitys.at(nameOfEntity)->isFalling = false;
+                            uMOfEntitys.at(nameOfEntity)->setEntityOnFloor();
                             if (entityColading->velocity.y != 0) {
                                 entityColading->lastVelocytyY = entityColading->velocity.y;
                                 entityColading->slideCooldawn.restart();
@@ -184,13 +182,8 @@ void EntityManager::colisionDetection(std::string nameOfEntity) {
                         else if (entityColading->velocity.y < 0) {
                             entityColading->velocity.y = 0;
                             entityColading->position.y = entityColided->position.y + entityColading->colisionHitBox.getGlobalBounds().height + 1;
-
-
                         }
                         }
-
-
-
                    }
 
 

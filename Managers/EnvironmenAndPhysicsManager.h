@@ -27,7 +27,7 @@ class EnvironmenAndPhysicsManager {
     double floor = 797;
     void gravity(sf::Vector2f &velocity, bool freez);
 
-    void groundeAndGravity(sf::Vector2f &position, sf::Vector2f &velocity, bool freez, bool ignoreTheFloor);
+    void groundeAndGravity(sf::Vector2f &position, sf::Vector2f &velocity, bool freez, bool ignoreTheFloor, bool isOnTheFloor);
 
     void platformGeneretion(sf::Vector2f position, std::string structure);
 };

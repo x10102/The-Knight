@@ -43,7 +43,7 @@ public:
         void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
         void input();
         void cooldowns_and_unIntraptebulActions() override;
-        void entityFallManagment() override;
+        void entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
         void movmentUpdate() override;
 
         void hitBoxUpdateposition() override;

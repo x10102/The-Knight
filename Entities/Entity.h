@@ -21,6 +21,7 @@ class Entity {
 public:
 
 
+
     EntityManager *entityManager;
     SpriteManager *spriteManager;
     PlayerUIHP *playerUIHP;
@@ -33,6 +34,7 @@ public:
     int currentAttack;
     int colisionDamage;
     int angle;
+    sf::Vector2f trueScale;
 
     bool gotHit = false;
     bool reatriting = false;
@@ -59,7 +61,7 @@ public:
     const float coolDawnJumpInterval = 1500.0f;
     const float coolDawnJumpInterval2 = 900.0f;
     const float beeingHitPlayerIntervalKnight = 500.0f;
-    const float beeingHitPlayerIntervalHellHound = 200.0f;
+    const float beeingHitPlayerIntervalHellHound = 300.0f;
 
     float offSet;
 
@@ -133,7 +135,7 @@ public:
 
     virtual void hitBoxUpdateposition();
 
-    virtual void entityFallManagment();
+    virtual void entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysicsManager);
 
 
 
@@ -182,6 +184,13 @@ public:
     sf::Vector2f getVelocity();
 
   virtual void shadowUpdate();
+
+    void setEntityOnFloor();
+    void impactBound();
+    bool boundEntity = false;
+    float impactBand = 2.1f;
+    bool retretBouncing = false;
+
 
 };
 

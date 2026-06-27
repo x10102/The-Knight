@@ -27,7 +27,8 @@ int main() {
 
     spawnManager.spawnHellHound({935,520}, {0, 0});
 
-    environmenAndPhysicsManager.platformGeneretion({600,770}, "----");
+
+    environmenAndPhysicsManager.platformGeneretion({600,770}, "--");
 
 
 

@@ -15,7 +15,7 @@ class Entity;
 class HellHound : public Entity {
 
     int hp = 25;
-    int attackBite = 40;
+    int attackBite = 20;
     float offSet;
 
 public:
@@ -41,7 +41,7 @@ public:
     sf::Vector2f getVelocityOfPlayer(EntityManager &entityManager);
 
     void movmentUpdate() override;
-    void entityFallManagment() override;
+    void entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
 
     void cooldowns_and_unIntraptebulActions() override;
 

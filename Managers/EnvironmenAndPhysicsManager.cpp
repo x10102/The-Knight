@@ -15,10 +15,9 @@ void EnvironmenAndPhysicsManager::gravity(sf::Vector2f &velocity, bool freez) {
 
 }
 
-void EnvironmenAndPhysicsManager::groundeAndGravity(sf::Vector2f &position, sf::Vector2f&velocity, bool freez , bool ignoreTheFloor) {
+void EnvironmenAndPhysicsManager::groundeAndGravity(sf::Vector2f &position, sf::Vector2f&velocity, bool freez , bool ignoreTheFloor, bool isColidingWithPlatform) {
     if (ignoreTheFloor) {
         gravity(velocity, freez);
-
     }
     else if (position.y + velocity.y + 1 < floor) {
         gravity(velocity, freez);
@@ -27,6 +26,8 @@ void EnvironmenAndPhysicsManager::groundeAndGravity(sf::Vector2f &position, sf::
         velocity.y = 0;
         position.y = floor;
     }
+
+
 }
 
 void EnvironmenAndPhysicsManager::platformGeneretion(sf::Vector2f position, std::string structure) {

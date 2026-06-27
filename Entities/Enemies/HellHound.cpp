@@ -12,6 +12,7 @@ HellHound::HellHound(sf::Vector2f position, sf::Vector2f velocity, std::string n
     float y = 2.4f;
 
     //Set hitBox:
+    trueScale = sf::Vector2f(x, y);
 
     colisionDamage = 10;
 
@@ -73,20 +74,15 @@ void HellHound::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &en
     if (!freez) {
         transformationSprite(currentTexture);
     }
-
-    entityFallManagment();
-
+    entityFallManagment(environmenAndPhysicsManager);
 
     if (!freez) {
         cooldowns_and_unIntraptebulActions();
     }
 
-    gravityAndGround(environmenAndPhysicsManager);
-
 
     hitBoxUpdateposition();
     colisionDetectionEntityExtention(name);
-
 
     if (!freez) {
         movmentUpdate();
@@ -122,13 +118,16 @@ void HellHound::actionWalkLeft() {
 }
 
 
-void HellHound::entityFallManagment() {
-    if (position.y + velocity.y + 1 < EnvironmenAndPhysicsManager::getInstance().floor) {
+void HellHound::entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
+    impactBound();
+    if (position.y + velocity.y + 1 < EnvironmenAndPhysicsManager::getInstance().floor & isColidingWithAPlatform) {
         isInAir = true;
     }
     else {
-        isInAir = false;
+        setEntityOnFloor();
     }
+    gravityAndGround(environmenAndPhysicsManager);
+
 }
 
 
@@ -175,12 +174,11 @@ void HellHound::beeingHitFunc() {
 
         if (gotHit) {
             if (beeingHit.getElapsedTime().asMilliseconds() <= beeingHitPlayerIntervalHellHound) {
-
                 spriteManager->getInstance().markTextureAsHit(&sprite);
+                attackHitBoxIsActive = false;
             }
             else {
                 spriteManager->getInstance().markTextureAsNormal(&sprite);
-
                 gotHit = false;
             }
         }

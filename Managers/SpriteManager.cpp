@@ -143,3 +143,6 @@ void SpriteManager::speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, fl
             }
         }
 }
+
+
+
