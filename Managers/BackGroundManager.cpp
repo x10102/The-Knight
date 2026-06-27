@@ -49,15 +49,13 @@ BackGroundManager::BackGroundManager(){
 void BackGroundManager::logicOfBackground(sf::RenderWindow& window) {
 
     positionXOfPlayer = entityManager->getInstance().getPositionOfEntity("Player").x;
+    float posOfPlayerX = EntityManager::getInstance().uMOfEntitys.at("Player")->position.x - window.getSize().x / 2;
 
-
-    if (CameraManager::getInstance().viewCornerX < positionXOfPlayer && CameraManager::getInstance().viewCornerXsecand > positionXOfPlayer) {
-        backGroundFull = (positionXOfPlayer / 1.08f) - window.getSize().x/2;
-        backGround = (positionXOfPlayer / 1.1f) - window.getSize().x/2;
-        midGround = (positionXOfPlayer / 1.5f) - window.getSize().x/2;
+    if (posOfPlayerX > CameraManager::getInstance().viewCornerX - CameraManager::getInstance().idkOffSet  && posOfPlayerX < CameraManager::getInstance().viewCornerXsecand- CameraManager::getInstance().idkOffSet) {
+        backGroundFull = (positionXOfPlayer / 1.08f) - (float)window.getSize().x/2;
+        backGround = (positionXOfPlayer / 1.1f) - (float)window.getSize().x/2;
+        midGround = (positionXOfPlayer / 1.5f) - (float)window.getSize().x/2;
     }
-
-
 
 }
 
