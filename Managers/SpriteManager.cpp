@@ -139,6 +139,12 @@ void SpriteManager::speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, fl
     }
 
     // Remove all shadows with zero or negative alpha
+    // Schizo C++20 stuff used here, so:
+    // `condition` is a lambda function that can be applied to an element of oldPositions
+    // will return true if alpha is <= 0
+    // remove_if moves all elements of oldPositions which match the condition to the end of the vector
+    // and gives us an iterator to the first one
+    // Then we erase everything from toErase to the actual end, meaning all the expired elements
     auto condition = [](auto &x){return x.second <= 0;};
     auto toErase = std::remove_if(oldPositionsOfPlayer.begin(), oldPositionsOfPlayer.end(), condition);
     oldPositionsOfPlayer.erase(toErase, oldPositionsOfPlayer.end());
