@@ -4,9 +4,6 @@
 
 #include "SpawnManager.h"
 
-#include <iostream>
-#include <ostream>
-
 #include "../Entities/Envirament/Platform.h"
 #include "../Entities/Envirament/PlatformEag.h"
 #include "../Entities/particle/HellHoundGore/HellHoundGore.h"

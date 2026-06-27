@@ -4,7 +4,8 @@
 
 #include "SpriteManager.h"
 
-#include <iostream>
+#include <cmath>
+#include <algorithm>
 
 
 
@@ -133,15 +134,19 @@ void SpriteManager::speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, fl
             clockOfBlure.restart();
         }
     }
-        for (auto &[spriteBlur, alpha] : oldPositionsOfPlayer) {
-            spriteBlur.setColor(sf::Color(255, 255, 255, alpha));
-            alpha = alpha - 30;
 
-            drawSprite(&spriteBlur,spriteBlur.getPosition().x, spriteBlur.getPosition().y, window );
-            if (alpha <= 0) {
-                oldPositionsOfPlayer.erase(oldPositionsOfPlayer.begin());
-            }
-        }
+    for (auto &[spriteBlur, alpha] : oldPositionsOfPlayer) {
+        spriteBlur.setColor(sf::Color(255, 255, 255, alpha));
+        alpha -= 30;
+        drawSprite(&spriteBlur,spriteBlur.getPosition().x, spriteBlur.getPosition().y, window );        
+    }
+
+    // Remove all shadows with zero or negative alpha
+    oldPositionsOfPlayer.erase(
+        std::remove_if(oldPositionsOfPlayer.begin(), oldPositionsOfPlayer.end(), 
+        [](auto &x){return x.second <= 0;}), 
+    oldPositionsOfPlayer.end());
+    
 }
 
 
