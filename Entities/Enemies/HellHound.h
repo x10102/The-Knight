@@ -5,7 +5,7 @@
 #ifndef HELLHOUND_H
 #define HELLHOUND_H
 
-#include "../../Managers/SpawnManager.h"
+
 #include "../../Managers/EntityManager.h"
 #include "../../Managers/EnvironmenAndPhysicsManager.h"
 
@@ -27,7 +27,7 @@ public:
 
     void drawColisionHitBox(sf::RenderWindow &window) override;
 
-    void drawAdditions(sf::RenderWindow &window);
+    void drawAdditions(sf::RenderWindow &window) override;
 
     void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
 

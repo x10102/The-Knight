@@ -5,7 +5,6 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 
-#include "../../Managers/SpawnManager.h"
 #include "../../Managers/EntityManager.h"
 
 class Entity;
