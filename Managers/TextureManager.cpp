@@ -6,6 +6,8 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <initializer_list>
 #include <stdexcept>
+#include <format>
+#include <string>
 
 TextureManager::TextureManager() {
     this->loadTextures({
@@ -72,7 +74,8 @@ void TextureManager::loadTextures(const std::initializer_list<TextureMapItem> in
 
     for(const auto &tex : init) {
         if(!temp.loadFromFile(tex.path)) {
-            throw std::runtime_error("Nelze načíst texturu"); // TODO: Print path
+            const std::string errorStr = std::format("Nelze načíst texturu {} ze souboru {}", tex.name, tex.path);
+            throw std::runtime_error(errorStr);
         }
         textures[tex.name] = temp;
 
