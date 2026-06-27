@@ -10,8 +10,8 @@
 #include "iostream"
 
 #include "SpriteManager.h"
-#include "SFML/Audio/Music.hpp"
-#include "SFML/Audio/Sound.hpp"
+#include <SFML/Audio/Music.hpp>
+#include <SFML/Audio/Sound.hpp>
 
 
 class AudioAndMusicManager {

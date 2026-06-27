@@ -4,9 +4,7 @@
 #include "EntityManager.h"
 #include "../Entities/Entity.h"
 #include "../Managers/EnvironmenAndPhysicsManager.h"
-
-
-#include <iostream>
+#include <cmath>
 
 
 void EntityManager::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {

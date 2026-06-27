@@ -5,13 +5,13 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 #include "../Managers/EnvironmenAndPhysicsManager.h"
-#include "SFML/Graphics/Sprite.hpp"
+#include <SFML/Graphics/Sprite.hpp>
 #include "../Managers/SpriteManager.h"
 #include "../Managers/TextureManager.h"
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "../UIdirectory/UIManager.h"
 #include "../UIdirectory/UI/PlayerUIHP.h"
-#include "SFML/Window/Event.hpp"
+#include <SFML/Window/Event.hpp>
 #include "../Managers/ParticalManager.h"
 
 
