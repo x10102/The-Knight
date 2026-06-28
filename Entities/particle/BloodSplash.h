@@ -5,7 +5,6 @@
 #ifndef BLOODSPLASH_H
 #define BLOODSPLASH_H
 
-#include "../../Managers/SpawnManager.h"
 #include "../../Managers/EntityManager.h"
 
 

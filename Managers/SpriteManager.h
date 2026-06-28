@@ -4,19 +4,15 @@
 
 #ifndef SPRITEMANAGER_H
 #define SPRITEMANAGER_H
-#include <unordered_map>
 
 #include "TextureManager.h"
-#include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp"
-#include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp"
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
-#include <deque>
-#include <map>
-
+#include <string>
 
 
-
-class SpriteManager{
+class SpriteManager {
 
     TextureManager *textureManager;
 

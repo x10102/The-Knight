@@ -3,279 +3,86 @@
 //
 
 #include "TextureManager.h"
-
+#include <SFML/Graphics/Texture.hpp>
+#include <initializer_list>
+#include <stdexcept>
+#include <format>
+#include <string>
 
 TextureManager::TextureManager() {
-    sf::Texture texture;
-    if (!texture.loadFromFile("../../textures/_Idle.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["idleKnight"] = texture;
-    numOfFramesTextures["idleKnight"] = 10;
-
-    if (!texture.loadFromFile("../../textures/_Run.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["runKnight"] = texture;
-    numOfFramesTextures["runKnight"] = 10;
-
-
-    if (!texture.loadFromFile("../../textures/_Attack.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["attackKnight"] = texture;
-    numOfFramesTextures["attackKnight"] = 4;
-
-
-    if (!texture.loadFromFile("../../textures/_Attack2NoMovement.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["SaccendAttackKnight"] = texture;
-    numOfFramesTextures["SaccendAttackKnight"] = 6;
-
-
-    if (!texture.loadFromFile("../../textures/_Jump.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["JumpKnight"] = texture;
-    numOfFramesTextures["JumpKnight"] = 3;
-
-
-    if (!texture.loadFromFile("../../textures/_JumpFallInbetween.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["JumpFallInbetweenKnight"] = texture;
-    numOfFramesTextures["JumpFallInbetweenKnight"] = 2;
-
-
-    if (!texture.loadFromFile("../../textures/_Fall.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["FallKnight"] = texture;
-    numOfFramesTextures["FallKnight"] = 3;
-
-
-    if (!texture.loadFromFile("../../textures/_SlideTransitionStart.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["SlideTransitionStartKnight"] = texture;
-    numOfFramesTextures["SlideTransitionStartKnight"] = 2;
-
-
-    if (!texture.loadFromFile("../../textures/_Slide.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["SlideKnight"] = texture;
-    numOfFramesTextures["SlideKnight"] = 2;
-
-
-    if (!texture.loadFromFile("../../textures/_SlideTransitionEnd.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["SlideTransitionEndKnight"] = texture;
-    numOfFramesTextures["SlideTransitionEndKnight"] = 2;
-
-
-    if (!texture.loadFromFile("../../textures/_Hit.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["HitKnight"] = texture;
-    numOfFramesTextures["HitKnight"] = 1;
-
-
-    //HellHound:
-
-
-    if (!texture.loadFromFile("../../textures/hell-hound-idle.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["HellHoundIdle"] = texture;
-    numOfFramesTextures["HellHoundIdle"] = 11;
-
-
-    if (!texture.loadFromFile("../../textures/hell-hound-jump.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["HellHoundJump"] = texture;
-    numOfFramesTextures["HellHoundJump"] = 6;
-
-
-    if (!texture.loadFromFile("../../textures/hell-hound-run.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["HellHoundRun"] = texture;
-    numOfFramesTextures["HellHoundRun"] = 5;
-
-
-    if (!texture.loadFromFile("../../textures/hell-hound-walk.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["HellHoundWalk"] = texture;
-    numOfFramesTextures["HellHoundWalk"] = 12;
-
-
-    if (!texture.loadFromFile("../../textures/hell-hound-hit.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["HellHoundHit"] = texture;
-    numOfFramesTextures["HellHoundHit"] = 1;
-
-
-    //Pozadí:
-
-    if (!texture.loadFromFile("../../textures/backGroundTexture/clouds.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["CloudsBackground"] = texture;
-
-
-    if (!texture.loadFromFile("../../textures/backGroundTexture/town.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["TownBackground"] = texture;
-
-
-    if (!texture.loadFromFile("../../textures/backGroundTexture/tiles.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["TilesBackground"] = texture;
-
-
-    if (!texture.loadFromFile("../../textures/hpBar.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["hpBar"] = texture;
-
-    if (!texture.loadFromFile("../../textures/hpLine.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["hpLine"] = texture;
-
-    if (!texture.loadFromFile("../../textures/damageBAR.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["hpDamageBar"] = texture;
-
-    if (!texture.loadFromFile("../../textures/Gore/blood-3.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["bloodSplash0"] = texture;
-    numOfFramesTextures["bloodSplash0"] = 5;
-
-    if (!texture.loadFromFile("../../textures/Gore/blood.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["bloodSplash1"] = texture;
-    numOfFramesTextures["bloodSplash1"] = 8;
-
-    if (!texture.loadFromFile("../../textures/Gore/blood-2.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["bloodSplash2"] = texture;
-    numOfFramesTextures["bloodSplash2"] = 6;
-
-    if (!texture.loadFromFile("../../textures/Gore/blood-small.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["bloodSplash3"] = texture;
-    numOfFramesTextures["bloodSplash3"] = 5;
-
-
-    if (!texture.loadFromFile("../../textures/Gore/HellHoundGore/goreHellHound1.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["GoreHellHound1"] = texture;
-    numOfFramesTextures["GoreHellHound1"] = 1;
-
-    if (!texture.loadFromFile("../../textures/Gore/HellHoundGore/goreHellHound2.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["GoreHellHound2"] = texture;
-    numOfFramesTextures["GoreHellHound2"] = 1;
-
-    if (!texture.loadFromFile("../../textures/Gore/HellHoundGore/goreHellHound3.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["GoreHellHound3"] = texture;
-    numOfFramesTextures["GoreHellHound3"] = 1;
-
-    if (!texture.loadFromFile("../../textures/Gore/HellHoundGore/goreHellHound4.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["GoreHellHound4"] = texture;
-    numOfFramesTextures["GoreHellHound4"] = 1;
-
-    if (!texture.loadFromFile("../../textures/Gore/HellHoundGore/goreHellHound5.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["GoreHellHound5"] = texture;
-    numOfFramesTextures["GoreHellHound5"] = 1;
-
-
-
-
-    if (!texture.loadFromFile("../../textures/forntGround/Plarform3.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["Plarform3"] = texture;
-    numOfFramesTextures["Plarform3"] = 1;
-
-    if (!texture.loadFromFile("../../textures/forntGround/Platform2.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["Plarform2"] = texture;
-    numOfFramesTextures["Plarform2"] = 1;
-
-    if (!texture.loadFromFile("../../textures/forntGround/platform1.png")) {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["Plarform1"] = texture;
-    numOfFramesTextures["Plarform1"] = 1;
-
-    if (!texture.loadFromFile("../../textures/hitbox.png"))  {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["hitbox"] = texture;
-    numOfFramesTextures["hitbox"] = 1;
-
-    if (!texture.loadFromFile("../../textures/shedow/oleophob_silhouette.png"))  {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["shedowOfEntity"] = texture;
-    numOfFramesTextures["shedowOfEntity"] = 1;
-
-    if (!texture.loadFromFile("../../textures/forntGround/PlatformEag.png"))  {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["platformEagLeft"] = texture;
-    numOfFramesTextures["platformEagLeft"] = 1;
-
-    if (!texture.loadFromFile("../../textures/forntGround/PlatformEagRight.png"))  {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["platformEagRight"] = texture;
-    numOfFramesTextures["platformEagRight"] = 1;
-
-    if (!texture.loadFromFile("../../textures/_Dash.png"))  {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["dashKnight"] = texture;
-    numOfFramesTextures["dashKnight"] = 2;
-
-    if (!texture.loadFromFile("../../textures/staminaBar.png"))  {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["staminaBar"] = texture;
-    numOfFramesTextures["staminaBar"] = 1;
-
-
-    if (!texture.loadFromFile("../../textures/staminaLine.png"))  {
-        throw std::runtime_error("Nelze načíst Idle texturu");
-    }
-    textures["staminaLine"] = texture;
-    numOfFramesTextures["staminaLine"] = 1;
+    this->loadTextures({
+    // ===== Player =====
+    {"../../textures/_Idle.png", "idleKnight", 10},
+    {"../../textures/_Run.png", "runKnight", 10},
+    {"../../textures/_Attack.png", "attackKnight", 4},
+    {"../../textures/_Attack2NoMovement.png", "SaccendAttackKnight", 6},
+    {"../../textures/_Jump.png", "JumpKnight", 3},
+    {"../../textures/_JumpFallInbetween.png", "JumpFallInbetweenKnight", 2},
+    {"../../textures/_Fall.png", "FallKnight", 3},
+    {"../../textures/_SlideTransitionStart.png", "SlideTransitionStartKnight", 2},
+    {"../../textures/_Slide.png", "SlideKnight", 2},
+    {"../../textures/_SlideTransitionEnd.png", "SlideTransitionEndKnight", 2},
+    {"../../textures/_Hit.png", "HitKnight", 1},
+    {"../../textures/_Dash.png", "dashKnight", 2},
+
+    // ===== Hellhound =====
+    {"../../textures/hell-hound-idle.png", "HellHoundIdle", 11},
+    {"../../textures/hell-hound-jump.png", "HellHoundJump", 6},
+    {"../../textures/hell-hound-run.png", "HellHoundRun", 5},
+    {"../../textures/hell-hound-walk.png", "HellHoundWalk", 12},
+    {"../../textures/hell-hound-hit.png", "HellHoundHit", 1},
+
+    // ===== Pozadí =====
+    {"../../textures/backGroundTexture/clouds.png", "CloudsBackground", 0},
+    {"../../textures/backGroundTexture/town.png", "TownBackground", 0},
+    {"../../textures/backGroundTexture/tiles.png", "TilesBackground", 0},
+
+    // ===== UI =====
+    {"../../textures/hpBar.png", "hpBar", 0},
+    {"../../textures/hpLine.png", "hpLine", 0},
+    {"../../textures/damageBAR.png", "hpDamageBar", 0},
+    {"../../textures/staminaBar.png", "staminaBar", 1},
+    {"../../textures/staminaLine.png", "staminaLine", 1},
+
+    // ===== Particles =====
+    {"../../textures/Gore/blood-3.png", "bloodSplash0", 5},
+    {"../../textures/Gore/blood.png", "bloodSplash1", 8},
+    {"../../textures/Gore/blood-2.png", "bloodSplash2", 6},
+    {"../../textures/Gore/blood-small.png", "bloodSplash3", 5},
+    {"../../textures/Gore/HellHoundGore/goreHellHound1.png", "GoreHellHound1", 1},
+    {"../../textures/Gore/HellHoundGore/goreHellHound2.png", "GoreHellHound2", 1},
+    {"../../textures/Gore/HellHoundGore/goreHellHound3.png", "GoreHellHound3", 1},
+    {"../../textures/Gore/HellHoundGore/goreHellHound4.png", "GoreHellHound4", 1},
+    {"../../textures/Gore/HellHoundGore/goreHellHound5.png", "GoreHellHound5", 1},
+
+    // ===== Platformy =====
+    {"../../textures/frontGround/platform1.png", "Plarform1", 1},
+    {"../../textures/frontGround/Platform2.png", "Plarform2", 1},
+    {"../../textures/frontGround/Plarform3.png", "Plarform3", 1},
+    {"../../textures/frontGround/PlatformEag.png", "platformEagLeft", 1},
+    {"../../textures/frontGround/PlatformEagRight.png", "platformEagRight", 1},
+
+    // ===== Dalsi =====
+    {"../../textures/hitbox.png", "hitbox", 1},
+    {"../../textures/shedow/oleophob_silhouette.png", "shedowOfEntity", 1},
+    
+    });
 }
 
+void TextureManager::loadTextures(const std::initializer_list<TextureMapItem> init) {
+    sf::Texture temp;
+
+    for(const auto &tex : init) {
+        if(!temp.loadFromFile(tex.path)) {
+            const std::string errorStr = std::format("Nelze načíst texturu {} ze souboru {}", tex.name, tex.path);
+            throw std::runtime_error(errorStr);
+        }
+        textures[tex.name] = temp;
+
+        if(tex.frameCount != 0)
+            numOfFramesTextures[tex.name] = tex.frameCount;
+    }
+}
 
 void TextureManager::setTexture(std::string nameOfTexture, sf::Sprite *spriteToInsertTo) {
     spriteToInsertTo->setTexture(textures.at(nameOfTexture));

@@ -5,16 +5,7 @@
 #ifndef SPAWNMANAGER_H
 #define SPAWNMANAGER_H
 
-#include "../Entities/Entity.h"
 #include "../Insertors/InsertEntity.h"
-
-#include "../Entities/Player/Player.h"
-#include "../Entities/Enemies/HellHound.h"
-#include "../Entities/particle/BloodSplash.h"
-#include "../Entities/Envirament/Platform.h"
-
-
-#include <memory>
 
 class SpawnManager {
 

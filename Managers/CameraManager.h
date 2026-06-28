@@ -5,7 +5,7 @@
 #ifndef CAMERAMANAGER_H
 #define CAMERAMANAGER_H
 
-#include "SFML/Graphics/RenderWindow.hpp"
+#include <SFML/Graphics/RenderWindow.hpp>
 
 class CameraManager {
   public:

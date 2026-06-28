@@ -5,9 +5,8 @@
 #ifndef ENVIRONMENANDPHYSICSMANAGER_H
 #define ENVIRONMENANDPHYSICSMANAGER_H
 
-#include "../Managers/EnvironmenAndPhysicsManager.h"
-
-#include "SFML/Graphics/Sprite.hpp"
+#include <SFML/Graphics/Sprite.hpp>
+#include <string>
 
 
 class EnvironmenAndPhysicsManager {

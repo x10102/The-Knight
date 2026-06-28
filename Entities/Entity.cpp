@@ -3,7 +3,6 @@
 //
 #include "Entity.h"
 #include "../Managers/EntityManager.h"
-#include <iostream>
 
 //vytvor zasedne zkrze entitiyFactory!
 Entity::Entity(sf::Vector2f position, sf::Vector2f velocity, std::string name) {
@@ -49,10 +48,10 @@ void Entity::setTexture(std::string newNameOfTexture) {
 }
 
 void Entity::transformationSprite(std::string currentTexture) {
-  spriteManager->getInstance().transfomration(&sprite, scale, faceingDirection, currentTexture);
-  spriteManager->getInstance().hitBoxTransformation(&hitBox, hitboxScale, faceingDirection);
-  spriteManager->getInstance().hitBoxTransformation(&attackHitBox, attackHitboxScale, faceingDirection);
-  spriteManager->getInstance().hitBoxTransformation(&colisionHitBox, colisionHitboxScale, faceingDirection);
+  spriteManager->getInstance().transfomration(&sprite, scale, facingDirection, currentTexture);
+  spriteManager->getInstance().hitBoxTransformation(&hitBox, hitboxScale, facingDirection);
+  spriteManager->getInstance().hitBoxTransformation(&attackHitBox, attackHitboxScale, facingDirection);
+  spriteManager->getInstance().hitBoxTransformation(&collisionHitBox, collisionHitboxScale, facingDirection);
 
 
 }
@@ -69,10 +68,10 @@ void Entity::entityFallManagment(EnvironmenAndPhysicsManager &environmenAndPhysi
 
 
 void Entity::freezEntity() {
-  freez = true;
+  freeze = true;
 }
 void Entity::unFreezEntity() {
-  freez = false;
+  freeze = false;
 }
 
 
@@ -96,7 +95,7 @@ void Entity::passivActionGetHit(std::string fecingDirection, int curentAttackDam
 
 void Entity::movmentUpdate() {};
 void Entity::hitBoxUpdateposition() {};
-void Entity::beeingHitFunc() {}
+void Entity::beingHitFunc() {}
 void Entity::passivActionDie() {};
 void Entity::passivActionStuck() {};
 
@@ -112,7 +111,7 @@ sf::Sprite &Entity::getSpriteOfEntity() {
   return sprite;
 }
 void Entity::gravityAndGround(EnvironmenAndPhysicsManager &environmenAndPhysicsManage) {
-  environmenAndPhysicsManage.groundeAndGravity(position, velocity, freez,ignoreFloor, isColidingWithAPlatform);
+  environmenAndPhysicsManage.groundeAndGravity(position, velocity, freeze,ignoreFloor, isCollidingWithPlatform);
 }
 void Entity::rotateSprite() {
   spriteManager->getInstance().rotateSprite(&sprite, angle);
@@ -142,25 +141,24 @@ void Entity::setEntityOnFloor() {
 }
 
 void Entity::impactBound() {
-  if (boundEntity) {
+  if(!boundEntity) return;
 
-    if (!retretBouncing) {
-      if (scale.y  >= impactBand) {
-        scale.y -= 0.1;
-      }
-      else {
-        retretBouncing = true;
-      }
+  if (!retretBouncing) {
+    if (scale.y  >= impactBand) {
+      scale.y -= 0.1;
     }
-    if (retretBouncing) {
-      if (scale.y < trueScale.y) {
-        scale.y += 0.1;
+    else {
+      retretBouncing = true;
+    }
+  }
+  if (retretBouncing) {
+    if (scale.y < trueScale.y) {
+      scale.y += 0.1;
 
-      }
-      else {
-        retretBouncing = false;
-        boundEntity = false;
-      }
+    }
+    else {
+      retretBouncing = false;
+      boundEntity = false;
     }
   }
 }

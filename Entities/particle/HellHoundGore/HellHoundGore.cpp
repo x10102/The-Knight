@@ -4,10 +4,6 @@
 
 #include "HellHoundGore.h"
 
-#include <iostream>
-#include <ostream>
-
-
 HellHoundGore::HellHoundGore(sf::Vector2f position, sf::Vector2f velocity, std::string name,std::string direction, std::string textureName) : Entity(position, velocity, name) {
     float x = 2.4f;
     float y = 2.4f;
@@ -19,7 +15,7 @@ HellHoundGore::HellHoundGore(sf::Vector2f position, sf::Vector2f velocity, std::
     this->name = name;
     scale = sf::Vector2f(x,y);
 
-    faceingDirection = direction;
+    facingDirection = direction;
 }
 
 void HellHoundGore::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
@@ -38,7 +34,7 @@ void HellHoundGore::killParicul() {
 }
 
 void HellHoundGore::movmentUpdate() {
-    if (!freez) {
+    if (!freeze) {
         angle = angle + 5;
         position.x += velocity.x;
         position.y += velocity.y;

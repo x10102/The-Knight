@@ -3,8 +3,8 @@
 //
 
 #include "../Managers/SpriteManager.h"
-#include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp"
-#include "../cmake-build-debug/_deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp"
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 #include "../Managers/TextureManager.h"
 
 

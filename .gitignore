@@ -1,0 +1,5 @@
+cmake-build-debug
+build
+CMakeCache.txt
+CMakeFiles
+.vscode

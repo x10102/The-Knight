@@ -1,15 +1,10 @@
-#include <iostream>
-
-#include "Entities/Player/Player.h"
 #include "Managers/EntityManager.h"
 #include "Managers/SpawnManager.h"
 
-#include "Insertors/InsertEntity.h"
 #include "Managers/BackGroundManager.h"
 #include "Managers/CameraManager.h"
 #include "Managers/DrawManager.h"
 #include "Managers/EnvironmenAndPhysicsManager.h"
-#include "SFML/Graphics.hpp"
 
 
 int main() {
@@ -27,13 +22,9 @@ int main() {
 
     spawnManager.spawnHellHound({935,520}, {0, 0});
 
-
     environmenAndPhysicsManager.platformGeneretion({600,770}, "--");
 
-
-
     sf::RenderWindow window(sf::VideoMode(1600, 1200), "The Knight");
-
 
     window.setFramerateLimit(60);
 
@@ -46,11 +37,7 @@ int main() {
                 window.close();
         }
 
-
         window.clear();
-
-
-
 
         entityManager.update(window, environmenAndPhysicsManager);
         BackGroundManager::getInstance().logicOfBackground(window);

@@ -1,15 +1,9 @@
 #ifndef BACKGROUNDMANAGER_H
 #define BACKGROUNDMANAGER_H
 
-#include <iostream>
-#include <MacTypes.h>
-#include <ostream>
-#include <__ranges/rend.h>
-
 #include "EntityManager.h"
 #include "SFML/Graphics/Sprite.hpp"
 #include "../Managers/SpriteManager.h"
-#include "../Managers/TextureManager.h"
 #include "SFML/Graphics/RenderWindow.hpp"
 
 class BackGroundManager;
@@ -46,7 +40,7 @@ public:
   float backGround = 0.f;
   float backGroundFull = 0.f;
 
-  Boolean cornerBool = false;
+  bool cornerBool = false;
 
   float backgroundCloudsDist = 0.f;
   float backgroundTownDist = 0.f;

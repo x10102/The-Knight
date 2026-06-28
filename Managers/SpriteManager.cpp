@@ -4,9 +4,8 @@
 
 #include "SpriteManager.h"
 
-#include <iostream>
-
-
+#include <cmath>
+#include <algorithm>
 
 void SpriteManager::drawSprite(sf::Sprite *sprite, float x, float y, sf::RenderWindow& window) {
     sprite->setPosition(x,y);
@@ -15,16 +14,16 @@ void SpriteManager::drawSprite(sf::Sprite *sprite, float x, float y, sf::RenderW
 
 void SpriteManager::setTextureToSprite(sf::String nameOfTexture,sf::Sprite *sprite) {
 
-        const sf::Texture* current = sprite->getTexture();
-        const sf::Texture* wanted  = &textureManager->getInstance().textures.at(nameOfTexture);
+    const sf::Texture* current = sprite->getTexture();
+    const sf::Texture* wanted  = &textureManager->getInstance().textures.at(nameOfTexture);
 
-        if (current != wanted) {
-            textureManager->getInstance().setTexture(nameOfTexture, sprite);
-            sf::IntRect rect =  sprite->getTextureRect();
-            int sizeOftexture = sprite->getTexture()->getSize().x;
-            int oneFrame = sizeOftexture / textureManager->getInstance().numOfFramesTextures.at(nameOfTexture);
-            sprite->setTextureRect({0,rect.top,oneFrame,rect.height});
-        }
+    if (current != wanted) {
+        textureManager->getInstance().setTexture(nameOfTexture, sprite);
+        sf::IntRect rect =  sprite->getTextureRect();
+        int sizeOftexture = sprite->getTexture()->getSize().x;
+        int oneFrame = sizeOftexture / textureManager->getInstance().numOfFramesTextures.at(nameOfTexture);
+        sprite->setTextureRect({0,rect.top,oneFrame,rect.height});
+    }
 }
 
 void SpriteManager::setTextureToBackGroundSprite(std::string nameOfTexture, sf::Sprite *sprite) {
@@ -90,17 +89,16 @@ void SpriteManager::markTextureAsNormal(sf::Sprite *sprite) {
 }
 
 void SpriteManager::animationUpdate(sf::Sprite *sprite, sf::String currentTexture) {
+    if (timer.getElapsedTime().asMilliseconds() < intervalBetwenAnimations) return;
 
-if (timer.getElapsedTime().asMilliseconds() >= intervalBetwenAnimations) {
-        int sizeOftexture = sprite->getTexture()->getSize().x;
-        int oneFrame = sizeOftexture / textureManager->getInstance().numOfFramesTextures.at(currentTexture);
-        sf::IntRect rect =  sprite->getTextureRect();
-        if (rect.left < sizeOftexture - oneFrame) {
-            sprite->setTextureRect({rect.left + oneFrame,rect.top,oneFrame,rect.height});
-        }
-        else {
-            sprite->setTextureRect({0,rect.top,oneFrame,rect.height});
-        }
+    int sizeOftexture = sprite->getTexture()->getSize().x;
+    int oneFrame = sizeOftexture / textureManager->getInstance().numOfFramesTextures.at(currentTexture);
+    sf::IntRect rect =  sprite->getTextureRect();
+    if (rect.left < sizeOftexture - oneFrame) {
+        sprite->setTextureRect({rect.left + oneFrame,rect.top,oneFrame,rect.height});
+    }
+    else {
+        sprite->setTextureRect({0,rect.top,oneFrame,rect.height});
     }
 }
 
@@ -125,23 +123,29 @@ void SpriteManager::rotateSprite(sf::Sprite *sprite, int angle) {
 
 void SpriteManager::speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, float numOfBlure, std::string direction, float velocityX, bool dashIsActiveBool) {
 
-    if (dashIsActiveBool) {
-        if (clockOfBlure.getElapsedTime().asMilliseconds() >= numOfBlure) {
-            sf::Sprite spriteToBlur = *sprite;
-            spriteToBlur.setPosition(sprite->getPosition().x, sprite->getPosition().y);
-            oldPositionsOfPlayer.push_back({spriteToBlur,blureShadow});
-            clockOfBlure.restart();
-        }
+    if (dashIsActiveBool && clockOfBlure.getElapsedTime().asMilliseconds() >= numOfBlure) {
+        sf::Sprite spriteToBlur = *sprite;
+        spriteToBlur.setPosition(sprite->getPosition().x, sprite->getPosition().y);
+        oldPositionsOfPlayer.push_back({spriteToBlur,blureShadow});
+        clockOfBlure.restart();
     }
-        for (auto &[spriteBlur, alpha] : oldPositionsOfPlayer) {
-            spriteBlur.setColor(sf::Color(255, 255, 255, alpha));
-            alpha = alpha - 30;
 
-            drawSprite(&spriteBlur,spriteBlur.getPosition().x, spriteBlur.getPosition().y, window );
-            if (alpha <= 0) {
-                oldPositionsOfPlayer.erase(oldPositionsOfPlayer.begin());
-            }
-        }
+    for (auto &[spriteBlur, alpha] : oldPositionsOfPlayer) {
+        spriteBlur.setColor(sf::Color(255, 255, 255, alpha));
+        alpha -= 30;
+        drawSprite(&spriteBlur,spriteBlur.getPosition().x, spriteBlur.getPosition().y, window );        
+    }
+
+    // Remove all shadows with zero or negative alpha
+    // Schizo C++20 stuff used here, so:
+    // `condition` is a lambda function that can be applied to an element of oldPositions
+    // will return true if alpha is <= 0
+    // remove_if moves all elements of oldPositions which match the condition to the end of the vector
+    // and gives us an iterator to the first one
+    // Then we erase everything from toErase to the actual end, meaning all the expired elements
+    auto condition = [](auto &x){return x.second <= 0;};
+    auto toErase = std::remove_if(oldPositionsOfPlayer.begin(), oldPositionsOfPlayer.end(), condition);
+    oldPositionsOfPlayer.erase(toErase, oldPositionsOfPlayer.end());
 }
 
 

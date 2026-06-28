@@ -5,12 +5,12 @@
 #include "PlatformEag.h"
 
 PlatformEag::PlatformEag(sf::Vector2f position, std::string name, std::string side) : Entity(position, {0,0}, name) {
-    colidebul = true;
+    collidable = true;
 
     float x = 2.95f;
     float y = 2.95f;
 
-    colisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
+    collisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
     if (side == "left") {
         setTexture("platformEagLeft");
     }
@@ -39,14 +39,14 @@ void PlatformEag::movmentUpdate() {
 
 
 void PlatformEag::hitBoxUpdateposition() {
-    colisionHitboxScale = sf::Vector2f(0.1f, 0.175f);
-    colisionBoxPosition.x = position.x;
-    colisionBoxPosition.y = position.y;
-    colisionHitBox.setPosition(colisionBoxPosition);
+    collisionHitboxScale = sf::Vector2f(0.1f, 0.175f);
+    collisionBoxPosition.x = position.x;
+    collisionBoxPosition.y = position.y;
+    collisionHitBox.setPosition(collisionBoxPosition);
 }
 
 
 void PlatformEag::drawColisionHitBox(sf::RenderWindow &window) {
-    SpriteManager::getInstance().drawSprite(&colisionHitBox, colisionBoxPosition.x,  colisionBoxPosition.y, window);
+    SpriteManager::getInstance().drawSprite(&collisionHitBox, collisionBoxPosition.x,  collisionBoxPosition.y, window);
 }
 

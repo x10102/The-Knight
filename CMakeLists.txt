@@ -5,6 +5,8 @@ project(untitled46)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)  # Nepoužívat rozšíření kompilátoru
+set(CMAKE_BUILD_TYPE Debug) # Pridat debug symboly
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Výstupní složka pro spustitelné soubory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -68,6 +70,9 @@ add_executable(untitled46 main.cpp
         UIdirectory/UI/PlayerUIStamina.cpp
         UIdirectory/UI/PlayerUIStamina.h
 )
+
+# target_compile_options(untitled46 PRIVATE -fsanitize=address)
+# target_link_options(untitled46 PRIVATE -fsanitize=address)
 
 # Linkování SFML
 target_link_libraries(untitled46 PRIVATE sfml-graphics sfml-window sfml-system)

@@ -27,7 +27,6 @@ void EnvironmenAndPhysicsManager::groundeAndGravity(sf::Vector2f &position, sf::
         position.y = floor;
     }
 
-
 }
 
 void EnvironmenAndPhysicsManager::platformGeneretion(sf::Vector2f position, std::string structure) {

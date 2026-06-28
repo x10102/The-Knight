@@ -4,12 +4,12 @@
 
 #include "SpawnManager.h"
 
-#include <iostream>
-#include <ostream>
-
+#include "../Entities/Player/Player.h"
 #include "../Entities/Envirament/Platform.h"
 #include "../Entities/Envirament/PlatformEag.h"
+#include "../Entities/Enemies/HellHound.h"
 #include "../Entities/particle/HellHoundGore/HellHoundGore.h"
+#include "../Entities/Particle/BloodSplash.h"
 
 
 void SpawnManager::spawnPlayer(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity){

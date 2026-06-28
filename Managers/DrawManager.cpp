@@ -4,10 +4,6 @@
 
 #include "DrawManager.h"
 
-#include <iostream>
-#include <ostream>
-
-
 void DrawManager::drawGame(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
 
     BackGroundManager::getInstance().drawBackground(window);
@@ -22,6 +18,5 @@ void DrawManager::drawGame(sf::RenderWindow &window, EnvironmenAndPhysicsManager
         entity->drawColisionHitBox(window);
         entity->drawAdditions(window);
     }
-
 
 }

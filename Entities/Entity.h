@@ -5,15 +5,13 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 #include "../Managers/EnvironmenAndPhysicsManager.h"
-#include "SFML/Graphics/Sprite.hpp"
+#include <SFML/Graphics/Sprite.hpp>
 #include "../Managers/SpriteManager.h"
 #include "../Managers/TextureManager.h"
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "../UIdirectory/UIManager.h"
 #include "../UIdirectory/UI/PlayerUIHP.h"
-#include "SFML/Window/Event.hpp"
-#include "../Managers/ParticalManager.h"
-
+#include <SFML/Window/Event.hpp>
 
 class EntityManager;
 
@@ -39,47 +37,47 @@ public:
     bool gotHit = false;
     bool reatriting = false;
     bool isInAir = false;
-    bool unIntaraptebulAnimation = false;
-    bool unIteraptebulAnimLowPriority = false;
-    bool SeccnadAttackIsActive = false;
+    bool uninterruptableAnimation = false;
+    bool uninterruptableAnimLowPriority = false;
+    bool SecondAttackActive = false;
     bool ignoreFloor = false;
-    bool colidebul = false;
-    bool isColidingWithAPlatform = false;
+    bool collidable = false;
+    bool isCollidingWithPlatform = false;
 
 
     int invincibilityTime;
     bool invincibility = false;
     sf::Clock invincClock;
 
-    bool freez =false;
+    bool freeze =false;
 
-    bool isHaveringInTheAir = false;
+    bool isHoveringInAir = false;
     bool isFalling = false;
 
-    const float intervalBetwenAttacks = 250.0f;
-    const float intervelToSlide = 50.0f;
-    const float coolDawnJumpInterval = 1500.0f;
-    const float coolDawnJumpInterval2 = 900.0f;
-    const float beeingHitPlayerIntervalKnight = 500.0f;
-    const float beeingHitPlayerIntervalHellHound = 300.0f;
+    const float intervalBetweenAttacks = 250.0f;
+    const float intervalToSlide = 50.0f;
+    const float coolDownJumpInterval = 1500.0f;
+    const float coolDownJumpInterval2 = 900.0f;
+    const float beingHitPlayerIntervalKnight = 500.0f;
+    const float beingHitPlayerIntervalHellHound = 300.0f;
 
     float offSet;
 
 
-    sf::Clock attackCooldawn;
-    sf::Clock slideCooldawn;
+    sf::Clock attackCooldown;
+    sf::Clock slideCooldown;
     sf::Clock cooldownJump;
-    sf::Clock beeingHit;
+    sf::Clock beingHit;
     sf::Clock retritingTimer;
     bool cooldownIsOffJump = true;
-    bool coolDawnIsOff = true;
-    bool slideIsActiove = false;
+    bool coolDownIsOff = true;
+    bool slideIsActive = false;
     bool dashIsActiveBool = false;
     sf::Clock dashIsActiveClock;
-    sf::Clock dashIsActiveClockCuldown;
+    sf::Clock dashIsActiveClockCooldown;
 
     int dashNumOfUse = 2;
-    float dashCuldownSecund = 4.0f;
+    float dashCooldownSecund = 4.0f;
 
 
     sf::Sprite sprite;
@@ -96,10 +94,10 @@ public:
     sf::Vector2f attackHitBoxPosition;
 
 
-    sf::Sprite colisionHitBox;
-    sf::Vector2f colisionHitboxScale;
+    sf::Sprite collisionHitBox;
+    sf::Vector2f collisionHitboxScale;
     sf::Texture colisionHitBoxTexture;
-    sf::Vector2f colisionBoxPosition;
+    sf::Vector2f collisionBoxPosition;
     float colisionHitBoxYOffSet;
 
     sf::Sprite shadow;
@@ -111,11 +109,11 @@ public:
 
     bool attackHitBoxIsActive = false;
 
-    sf::String faceingDirection;
+    sf::String facingDirection;
     sf::Vector2f scale;
     sf::Vector2f position; //pozice entityq
     sf::Vector2f velocity; // velocity směr entity
-    float lastVelocytyY;
+    float lastVelocityY;
 
 
     virtual void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager); //osobni Update Kazde Entity
@@ -140,11 +138,12 @@ public:
 
 
     Entity(sf::Vector2f position, sf::Vector2f velocity, std::string name); //konstruktor Entity
+    virtual ~Entity() = default;
 
     void transformationSprite(std::string currentTexture);
     virtual void cooldowns_and_unIntraptebulActions();
 
-    virtual void beeingHitFunc();
+    virtual void beingHitFunc();
 
     //Actions:
     virtual void actionWalkRight();

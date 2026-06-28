@@ -6,14 +6,14 @@
 
 
 Platform::Platform(sf::Vector2f position, std::string name) : Entity(position, {0,0}, name) {
-    colidebul = true;
+    collidable = true;
 
     float x = 2.4f;
     float y = 2.4f;
 
     int randTextureNum = (rand() % 2) + 1;
 
-    colisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
+    collisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
 
     setTexture("Plarform" + std::to_string(randTextureNum));
 
@@ -26,11 +26,8 @@ Platform::Platform(sf::Vector2f position, std::string name) : Entity(position, {
 void Platform::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) {
     transformationSprite(currentTexture);
 
-
-
     movmentUpdate();
     hitBoxUpdateposition();
-
 
 }
 
@@ -42,16 +39,16 @@ void Platform::movmentUpdate() {
 
 void Platform::hitBoxUpdateposition() {
 
-    colisionHitboxScale = sf::Vector2f(0.6f, 0.175f);
-    colisionBoxPosition.x = position.x;
-    colisionBoxPosition.y = position.y;
-    colisionHitBox.setPosition(colisionBoxPosition);
+    collisionHitboxScale = sf::Vector2f(0.6f, 0.175f);
+    collisionBoxPosition.x = position.x;
+    collisionBoxPosition.y = position.y;
+    collisionHitBox.setPosition(collisionBoxPosition);
 
 }
 
 
 void Platform::drawColisionHitBox(sf::RenderWindow &window) {
-    SpriteManager::getInstance().drawSprite(&colisionHitBox, colisionBoxPosition.x,  colisionBoxPosition.y, window);
+    SpriteManager::getInstance().drawSprite(&collisionHitBox, collisionBoxPosition.x,  collisionBoxPosition.y, window);
 }
 
 
