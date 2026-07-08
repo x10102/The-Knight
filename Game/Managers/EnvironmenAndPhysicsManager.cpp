@@ -33,7 +33,7 @@ void EnvironmenAndPhysicsManager::platformGeneretion(sf::Vector2f position, std:
 
     int offSetForLatform = 0;
 
-    SpawnManager::getInstance().spawnEagOfPlatform({position.x - 89, position.y}, "left");
+    SpawnManager::getInstance().spawnEagOfPlatform({position.x - 89, position.y}, Direction::LEFT);
 
     for (int indexOfChar = 0; indexOfChar < structure.size(); indexOfChar++) {
 
@@ -43,7 +43,7 @@ void EnvironmenAndPhysicsManager::platformGeneretion(sf::Vector2f position, std:
         offSetForLatform += 150;
     }
 
-    SpawnManager::getInstance().spawnEagOfPlatform({position.x + offSetForLatform - 150 + 89, position.y}, "right");
+    SpawnManager::getInstance().spawnEagOfPlatform({position.x + offSetForLatform - 150 + 89, position.y}, Direction::RIGHT);
 
 }
 

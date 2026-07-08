@@ -6,14 +6,13 @@
 #define PLAYER_H
 
 
-#include <list>
-
 #include "../../Managers/EntityManager.h"
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "../Entity.h"
 #include "../../UIdirectory/UI/PlayerUIStamina.h"
 #include "SFML/Graphics/CircleShape.hpp"
-#include "SFML/Graphics/Shape.hpp"
+
+#include "../../UIdirectory/UI/PlayerUIHP.h"
 
 
 
@@ -82,7 +81,7 @@ public:
 
         void passivActionBetwenFalling() override;
         void passivActionFalling() override;
-        void passivActionGetHit(std::string fecingDirection, int damage) override;
+        void passivActionGetHit(Direction fecingDirection, int damage) override;
         void passivActionDie() override;
 
 

@@ -4,17 +4,17 @@
 
 #include "PlatformEag.h"
 
-PlatformEag::PlatformEag(sf::Vector2f position, std::string name, std::string side) : Entity(position, {0,0}, name) {
+PlatformEag::PlatformEag(sf::Vector2f position, std::string name, Direction side) : Entity(position, {0,0}, name) {
     collidable = true;
 
     float x = 2.95f;
     float y = 2.95f;
 
     collisionHitBox.setTexture(TextureManager::getInstance().textures["hitbox"]);
-    if (side == "left") {
+    if (side == Direction::LEFT) {
         setTexture("platformEagLeft");
     }
-    else if (side == "right") {
+    else if (side == Direction::RIGHT) {
         setTexture("platformEagRight");
     }
 

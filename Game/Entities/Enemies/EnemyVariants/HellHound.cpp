@@ -6,6 +6,8 @@
 #include "../../../Managers/ParticalManager.h"
 #include "../../souls/SoulsVariants/NarunSoul.h"
 
+#include "../../../common.hpp"
+
 HellHound::HellHound(sf::Vector2f position, sf::Vector2f velocity, std::string name) :
 Enemy(position, velocity, name, 25, 20, new NarunSoul()) {}
 
@@ -37,10 +39,10 @@ void HellHound::cooldowns_and_unIntraptebulActions() {
     if (spriteManager->getInstance().getIndexOfAnimation(&sprite) >= spriteManager->getInstance().getMaxIndexOfAnimation(&sprite) - 64) {
         uninterruptableAnimation = false;
         attackHitBoxIsActive = false;
-        if (facingDirection == "left") {
+        if (facingDirection == Direction::LEFT) {
             actionWalkLeft();
         }
-        else if (facingDirection == "right") {
+        else if (facingDirection == Direction::RIGHT) {
             actionWalkRight();
         }
         attackCooldown.restart();
@@ -85,7 +87,7 @@ void HellHound::actionWalkRight() {
 
     setTexture("HellHoundRun");
 
-    facingDirection = "right";
+    facingDirection = Direction::RIGHT;
     velocity.x = -11;
 }
 
@@ -94,7 +96,7 @@ void HellHound::actionWalkLeft() {
 
     setTexture("HellHoundRun");
 
-    facingDirection = "left";
+    facingDirection = Direction::LEFT;
     velocity.x = 11;
 }
 
@@ -120,7 +122,7 @@ void HellHound::transformHitBoxAttack1() {
 void HellHound::actionJumpAttack() {
     if(uninterruptableAnimation) return;
 
-    if (facingDirection == "left") {
+    if (facingDirection == Direction::LEFT) {
         velocity.x = 12;
     }
     else {
@@ -152,17 +154,17 @@ void HellHound::beingHitFunc() {
     }
 }
 
-void HellHound::passivActionGetHit(std::string fecingDirection, int damage) {
+void HellHound::passivActionGetHit(Direction facingDirection, int damage) {
     if(freeze || gotHit) return;
 
-    ParticalManager::getInstance().spawnBloodSplash({position.x ,position.y -40}, fecingDirection, false);
+    ParticalManager::getInstance().spawnBloodSplash({position.x ,position.y -40}, facingDirection, false);
     attackHitBoxIsActive = false;
     uninterruptableAnimation = false;
     setTexture("HellHoundHit");
-    if (fecingDirection == "right") {
+    if (facingDirection == Direction::RIGHT) {
         velocity.x = 0;
     }
-    else if (fecingDirection == "left") {
+    else if (facingDirection == Direction::LEFT) {
         velocity.x = 0;
     }
     beingHit.restart();
@@ -180,7 +182,7 @@ void HellHound::passivActionDie() {
     ParticalManager::getInstance().spawnBloodSplash({position.x,position.y + 15}, facingDirection, true);
 
     sf::Vector2f velocityGore = {0,0};
-    if (facingDirection == "left") {
+    if (facingDirection == Direction::LEFT) {
         velocityGore.x = -5;
     }
     else {
@@ -230,11 +232,11 @@ void HellHound::hitBoxUpdateposition() {
 
     if (currentTexture == "HellHoundJump") {
         hitboxScale = sf::Vector2f(0.35f,0.3f);
-        if (facingDirection == "right") {
+        if (facingDirection == Direction::RIGHT) {
             hitBoxPosition.x = position.x - 10;
 
         }
-        else if (facingDirection == "left") {
+        else if (facingDirection == Direction::LEFT) {
             hitBoxPosition.x = position.x + 10;
         }
         hitBoxPosition.y = position.y;
@@ -246,10 +248,10 @@ void HellHound::hitBoxUpdateposition() {
     }
     else {
         hitboxScale = sf::Vector2f(0.35f,0.3f);
-        if (facingDirection == "right") {
+        if (facingDirection == Direction::RIGHT) {
             hitBoxPosition.x = position.x + 5;
         }
-        else if (facingDirection == "left") {
+        else if (facingDirection == Direction::LEFT) {
             hitBoxPosition.x = position.x - 5;
         }
         hitBoxPosition.y = position.y;
@@ -265,11 +267,11 @@ void HellHound::hitBoxUpdateposition() {
 
     if (currentTexture == "HellHoundJump") {
         attackHitboxScale = sf::Vector2f(0.25f,0.28f);
-        if (facingDirection == "right") {
+        if (facingDirection == Direction::RIGHT) {
             attackHitBoxPosition.x = position.x - 35;
 
         }
-        else if (facingDirection == "left") {
+        else if (facingDirection == Direction::LEFT) {
             attackHitBoxPosition.x = position.x + 35;
         }
         attackHitBoxPosition.y = position.y;
@@ -309,10 +311,10 @@ void HellHound::drawColisionHitBox(sf::RenderWindow &window) {
 }
 
 void HellHound::shadowUpdate() {
-    if (facingDirection == "right") {
+    if (facingDirection == Direction::RIGHT) {
         shadowPosition.x = position.x - 12;
     }
-    else if (facingDirection == "left") {
+    else if (facingDirection == Direction::LEFT) {
         shadowPosition.x = position.x + 12;
     }
     shadowPosition.y = EnvironmenAndPhysicsManager::getInstance().floor + 5;

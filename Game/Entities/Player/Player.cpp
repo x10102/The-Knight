@@ -4,9 +4,6 @@
 
 #include "Player.h"
 
-#include <iostream>
-#include <ostream>
-
 #include "../../UIdirectory/UI/PlayerUIHP.h"
 #include "SFML/Graphics/Sprite.hpp"
 #include "SFML/Window/Keyboard.hpp"
@@ -33,7 +30,7 @@ Player::Player(sf::Vector2f position, sf::Vector2f velocity) : Entity(position, 
     //docasne}
 
     scale = sf::Vector2f(x, y);
-    facingDirection = "right";
+    facingDirection = Direction::RIGHT;
 
 }
 
@@ -76,9 +73,9 @@ void Player::hitBoxUpdateposition() {
 
     if (currentTexture == "SlideKnight") {
         hitboxScale = sf::Vector2f(0.2f, 0.3);
-        if (facingDirection == "right") {
+        if (facingDirection == Direction::RIGHT) {
             hitBoxPosition.x = position.x;
-        } else if (facingDirection == "left") {
+        } else if (facingDirection == Direction::LEFT) {
             hitBoxPosition.x = position.x;
         }
         hitBoxPosition.y = position.y;
@@ -89,9 +86,9 @@ void Player::hitBoxUpdateposition() {
 
     } else {
         hitboxScale = sf::Vector2f(0.12f, 0.35f);
-        if (facingDirection == "right") {
+        if (facingDirection == Direction::RIGHT) {
             hitBoxPosition.x = position.x - 12;
-        } else if (facingDirection == "left") {
+        } else if (facingDirection == Direction::LEFT) {
             hitBoxPosition.x = position.x + 12;
         }
         hitBoxPosition.y = position.y;
@@ -103,9 +100,9 @@ void Player::hitBoxUpdateposition() {
 
     if (currentTexture == "attackKnight") {
         attackHitboxScale = sf::Vector2f(0.45f, 0.55f);
-        if (facingDirection == "right") {
+        if (facingDirection == Direction::RIGHT) {
             attackHitBoxPosition.x = position.x + 70;
-        } else if (facingDirection == "left") {
+        } else if (facingDirection == Direction::LEFT) {
             attackHitBoxPosition.x = position.x - 70;
         }
         attackHitBoxPosition.y = position.y;
@@ -113,9 +110,9 @@ void Player::hitBoxUpdateposition() {
 
     if (currentTexture == "SaccendAttackKnight") {
         attackHitboxScale = sf::Vector2f(0.55f, 0.45f);
-        if (facingDirection == "right") {
+        if (facingDirection == Direction::RIGHT) {
             attackHitBoxPosition.x = position.x + 25;
-        } else if (facingDirection == "left") {
+        } else if (facingDirection == Direction::LEFT) {
             attackHitBoxPosition.x = position.x - 25;
         }
         attackHitBoxPosition.y = position.y;
@@ -270,14 +267,14 @@ void Player::actionWalkRight() {
         if (!uninterruptableAnimLowPriority) {
             setTexture("runKnight");
         }
-        facingDirection = "right";
+        facingDirection = Direction::RIGHT;
         if (velocity.x > 7) {
             velocity.x = velocity.x - 0.8;
         } else {
             velocity.x = 7;
         }
     } else {
-        facingDirection = "right";
+        facingDirection = Direction::RIGHT;
         if (velocity.x <= 6) {
             velocity.x++;
         }
@@ -289,7 +286,7 @@ void Player::actionWalkLeft() {
 
     if (!isInAir) {
         setTexture("runKnight");
-        facingDirection = "left";
+        facingDirection = Direction::LEFT;
         if (velocity.x < -7) {
             velocity.x = velocity.x + 0.8;
         } else {
@@ -297,7 +294,7 @@ void Player::actionWalkLeft() {
         }
 
     } else {
-        facingDirection = "left";
+        facingDirection = Direction::LEFT;
         if (velocity.x >= -6) {
             velocity.x--;
         }
@@ -380,7 +377,7 @@ void Player::actionSlide() {
         velocity.x = 0;
     }
 
-    if (facingDirection == "right") {
+    if (facingDirection == Direction::RIGHT) {
         velocity.x = velocity.x + lastVelocityY / 2.5;
     } else {
         velocity.x = velocity.x - lastVelocityY / 2.5;
@@ -393,7 +390,7 @@ void Player::actionSlide() {
 void Player::actionDash() {
     if(dashIsActiveBool) return;
 
-    if (facingDirection == "right") {
+    if (facingDirection == Direction::RIGHT) {
         if (isInAir) {
             velocity.x = Dashspeed;
         }
@@ -401,7 +398,7 @@ void Player::actionDash() {
             velocity.x = Dashspeed * 1.2;
         }
     }
-    else if (facingDirection == "left") {
+    else if (facingDirection == Direction::LEFT) {
         if (isInAir) {
             velocity.x = - Dashspeed ;
         }
@@ -430,15 +427,15 @@ void Player::dashIsActive() {
     }
 }
 
-void Player::passivActionGetHit(std::string fecingDirection, int damage) {
+void Player::passivActionGetHit(Direction fecingDirection, int damage) {
     if(invincibility || freeze || gotHit) return;
 
     attackHitBoxIsActive = false;
     uninterruptableAnimation = false;
     setTexture("HitKnight");
-    if (fecingDirection == "right") {
+    if (fecingDirection == Direction::RIGHT) {
         velocity.x = -11;
-    } else if (fecingDirection == "left") {
+    } else if (fecingDirection == Direction::LEFT) {
         velocity.x = 11;
     }
     beingHit.restart();
@@ -528,10 +525,10 @@ void Player::drawColisionHitBox(sf::RenderWindow &window) {
 }
 
 void Player::shadowUpdate() {
-    if (facingDirection == "right") {
+    if (facingDirection == Direction::RIGHT) {
         shadowPosition.x = position.x - 12;
     }
-    else if (facingDirection == "left") {
+    else if (facingDirection == Direction::LEFT) {
         shadowPosition.x = position.x + 12;
     }
     shadowPosition.y = EnvironmenAndPhysicsManager::getInstance().floor + 5;

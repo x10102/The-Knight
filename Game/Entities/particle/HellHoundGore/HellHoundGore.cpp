@@ -4,7 +4,7 @@
 
 #include "HellHoundGore.h"
 
-HellHoundGore::HellHoundGore(sf::Vector2f position, sf::Vector2f velocity, std::string name,std::string direction, std::string textureName) : Entity(position, velocity, name) {
+HellHoundGore::HellHoundGore(sf::Vector2f position, sf::Vector2f velocity, std::string name,Direction direction, std::string textureName) : Entity(position, velocity, name) {
     float x = 2.4f;
     float y = 2.4f;
 

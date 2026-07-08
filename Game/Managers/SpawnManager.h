@@ -27,10 +27,10 @@ public:
     void spawnHellHound(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity);
 
 
-    void spawnBloodSplash(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity, std::string direction, bool kill);
-    void spawnHellHoundGore(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity, std::string direction, std::string nameOfTexture);
+    void spawnBloodSplash(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity, Direction direction, bool kill);
+    void spawnHellHoundGore(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity, Direction direction, std::string nameOfTexture);
     void spawnPlatform(sf::Vector2f spawnPosition);
-    void spawnEagOfPlatform(sf::Vector2f spawnPosition, std::string side);
+    void spawnEagOfPlatform(sf::Vector2f spawnPosition, Direction side);
 
 };
 

@@ -7,7 +7,7 @@
 
 
 #include "../Enemy.h"
-#include "../../../Managers/EntityManager.h"
+
 #include "../../../Managers/EnvironmenAndPhysicsManager.h"
 
 
@@ -42,7 +42,7 @@ public:
     void cooldowns_and_unIntraptebulActions() override;
 
     void passivActionStandStill() override;
-    void passivActionGetHit(std::string fecingDirection, int damage) override;
+    void passivActionGetHit(Direction fecingDirection, int damage) override;
     void passivActionDie() override;
     void beingHitFunc() override;
 

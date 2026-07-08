@@ -16,7 +16,7 @@ class PlatformEag : public Entity {
 
     void hitBoxUpdateposition() override;
 
-    PlatformEag(sf::Vector2f position, std::string name, std::string side);
+    PlatformEag(sf::Vector2f position, std::string name, Direction side);
 
     void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;
 

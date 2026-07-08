@@ -16,7 +16,7 @@ class BloodSplash : public Entity {
 
     std::string nameOfTexture;
 
-    BloodSplash(sf::Vector2f position, sf::Vector2f velocity, std::string name , std::string direction, bool kill);
+    BloodSplash(sf::Vector2f position, sf::Vector2f velocity, std::string name , Direction direction, bool kill);
 
 
     void update(sf::RenderWindow &window, EnvironmenAndPhysicsManager &environmenAndPhysicsManager) override;

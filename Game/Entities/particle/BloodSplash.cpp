@@ -4,7 +4,7 @@
 
 #include "BloodSplash.h"
 
-BloodSplash::BloodSplash(sf::Vector2f position, sf::Vector2f velocity, std::string name,std::string direction, bool kill) : Entity(position, velocity, name) {
+BloodSplash::BloodSplash(sf::Vector2f position, sf::Vector2f velocity, std::string name,Direction direction, bool kill) : Entity(position, velocity, name) {
     float x = 2.4f;
     float y = 2.4f;
 

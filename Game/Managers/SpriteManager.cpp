@@ -4,9 +4,6 @@
 
 #include "SpriteManager.h"
 
-#include "../GameManager.h"
-
-
 void SpriteManager::drawSprite(sf::Sprite *sprite, float x, float y, sf::RenderWindow& window) {
     sprite->setPosition(x,y);
     window.draw(*sprite);
@@ -31,24 +28,24 @@ void SpriteManager::setTextureToBackGroundSprite(std::string nameOfTexture, sf::
 }
 
 
-void SpriteManager::switchSides(std::string direction, sf::Sprite *sprite) {
+void SpriteManager::switchSides(Direction direction, sf::Sprite *sprite) {
     sf::Vector2f scale = sprite->getScale();
 
-    if (direction == "left")
+    if (direction == Direction::LEFT)
         sprite->setScale(-std::abs(scale.x), scale.y);
-    else if (direction == "right")
+    else if (direction == Direction::RIGHT)
         sprite->setScale(std::abs(scale.x), scale.y);
 }
 
 
-void SpriteManager::transfomration(sf::Sprite *sprite, sf::Vector2f scale, std::string direction, std::string currentTexture) {
+void SpriteManager::transfomration(sf::Sprite *sprite, sf::Vector2f scale, Direction direction, std::string currentTexture) {
     animationUpdate(sprite, currentTexture);
     sprite->setOrigin(sprite->getLocalBounds().width/2, sprite->getLocalBounds().height);
     sprite->setScale(scale.x, scale.y);
     switchSides(direction, sprite);
 }
 
-void SpriteManager::hitBoxTransformation(sf::Sprite *sprite, sf::Vector2f scale, sf::String direction) {
+void SpriteManager::hitBoxTransformation(sf::Sprite *sprite, sf::Vector2f scale, Direction direction) {
     sprite->setOrigin(sprite->getLocalBounds().width/2, sprite->getLocalBounds().height);
     sprite->setColor(sf::Color(255,255,255,100));
     sprite->setScale(scale.x, scale.y);
@@ -149,7 +146,7 @@ void SpriteManager::sorceBarTransformation(sf::Sprite *sprite, float sorce) {
 }
 
 
-void SpriteManager::speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, float numOfBlure, std::string direction, float velocityX, bool dashIsActiveBool) {
+void SpriteManager::speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, float numOfBlure, Direction direction, float velocityX, bool dashIsActiveBool) {
 
     if (dashIsActiveBool && clockOfBlure.getElapsedTime().asMilliseconds() >= numOfBlure) {
         sf::Sprite spriteToBlur = *sprite;

@@ -10,8 +10,9 @@
 #include "../Managers/TextureManager.h"
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "../UIdirectory/UIManager.h"
-#include "../UIdirectory/UI/PlayerUIHP.h"
 #include <SFML/Window/Event.hpp>
+
+#include "../common.hpp"
 
 class EntityManager;
 class Soul;
@@ -112,7 +113,7 @@ public:
 
     bool attackHitBoxIsActive = false;
 
-    std::string facingDirection;
+    Direction facingDirection;
     sf::Vector2f scale;
     sf::Vector2f position; //pozice entityq
     sf::Vector2f velocity; // velocity směr entity
@@ -166,7 +167,7 @@ public:
 
     virtual void passivActionBetwenFalling();
     virtual void passivActionFalling();
-    virtual void passivActionGetHit(std::string fecingDirection, int damage);
+    virtual void passivActionGetHit(Direction fecingDirection, int damage);
     virtual void passivActionDie();
 
     virtual void passivActionStuck();

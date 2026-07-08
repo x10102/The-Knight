@@ -11,10 +11,9 @@
 
 #include <string>
 #include <cmath>
-#include <algorithm>
-#include <iostream>
 
 #include "SFML/Graphics/CircleShape.hpp"
+#include "../common.hpp"
 
 
 class SpriteManager {
@@ -41,9 +40,9 @@ class SpriteManager {
     sf::Clock clockOfBlure;
 
     //Setap Sprite:
-    void transfomration(sf::Sprite *sprite, sf::Vector2f scale, std::string direction, std::string currentTexture);
-    void hitBoxTransformation(sf::Sprite *sprite, sf::Vector2f scale, sf::String direction);
-    void switchSides(std::string direction, sf::Sprite *sprite);
+    void transfomration(sf::Sprite *sprite, sf::Vector2f scale, Direction direction, std::string currentTexture);
+    void hitBoxTransformation(sf::Sprite *sprite, sf::Vector2f scale, Direction direction);
+    void switchSides(Direction direction, sf::Sprite *sprite);
     void drawSprite(sf::Sprite *sprite, float x, float y, sf::RenderWindow& window); //drawFunkce(Vlastní každá Entita či oběkt)
     void animationUpdate(sf::Sprite *sprite, std::string currentTexture);
     void setTextureToSprite(sf::String nameOfTexture, sf::Sprite *sprite);
@@ -68,7 +67,7 @@ class SpriteManager {
 
     //Effects:
 
-    void speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, float numOfBlure, std::string direction, float velocityX, bool dashIsActiveBool);
+    void speedBlurer(sf::Sprite *sprite, sf::RenderWindow &window, float numOfBlure, Direction direction, float velocityX, bool dashIsActiveBool);
 
 };
 

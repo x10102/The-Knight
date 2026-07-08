@@ -10,6 +10,7 @@
 #include "../Entities/Entity.h"
 #include "../Managers/EnvironmenAndPhysicsManager.h"
 #include "SFML/Graphics/CircleShape.hpp"
+#include "../common.hpp"
 
 class Entity;
 
@@ -29,7 +30,7 @@ public:
     }
 
     bool perry = false;
-    std::string fecingDirectionOfAttackingEntity;
+    Direction fecingDirectionOfAttackingEntity;
 
     bool attacked = false;
 

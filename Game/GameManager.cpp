@@ -5,6 +5,7 @@
 #include "GameManager.h"
 
 #include "Managers/SpriteManager.h"
+#include <iostream>
 
 GameManager::GameManager() {}
 

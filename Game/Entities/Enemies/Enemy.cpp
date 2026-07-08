@@ -27,7 +27,7 @@ Enemy::Enemy(sf::Vector2f position, sf::Vector2f velocity, std::string name, int
 
 
     scale = sf::Vector2f(x,y);
-    facingDirection = "left";
+    facingDirection = Direction::LEFT;
 }
 
 

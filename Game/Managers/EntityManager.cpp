@@ -24,15 +24,13 @@ void EntityManager::update(sf::RenderWindow &window, EnvironmenAndPhysicsManager
 
 void EntityManager::absorbSouls(sf::CircleShape &absortionFeeld) {
     for (auto &[nameOfEntity, entity]: uMOfEntitys) {
-        if (absortionFeeld.getGlobalBounds().intersects(
-                    entity->getHitbox()->getGlobalBounds())) {
-            if (entity->hasSoul) {
-                Soul* soul = entity->getSoul();
-                if (soul != nullptr) {
-                    entity->insertSoulInToAbsortionFeeld(soul);
-                    entity->passivActionDie();
-                }
-            }
+        const auto hitboxBounds = entity->getHitbox()->getGlobalBounds();
+        if(!entity->hasSoul || !absortionFeeld.getGlobalBounds().intersects(hitboxBounds)) continue;
+
+        Soul* soul = entity->getSoul();
+        if (soul != nullptr) {
+            entity->insertSoulInToAbsortionFeeld(soul);
+            entity->passivActionDie();
         }
     }
 }

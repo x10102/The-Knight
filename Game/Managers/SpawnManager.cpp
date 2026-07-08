@@ -25,7 +25,7 @@ void SpawnManager::spawnHellHound(sf::Vector2f spawnPosition, sf::Vector2f spawn
     insertEntity->getInstance().insertEntity(name,hellHound);
 }
 
-void SpawnManager::spawnBloodSplash(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity, std::string direction, bool kill) {
+void SpawnManager::spawnBloodSplash(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity, Direction direction, bool kill) {
     std::string name = "BloodSplash" + std::to_string(id);
     id++;
 
@@ -33,7 +33,7 @@ void SpawnManager::spawnBloodSplash(sf::Vector2f spawnPosition, sf::Vector2f spa
     insertEntity->getInstance().insertEntity(name,blood_splash);
 }
 
-void SpawnManager::spawnHellHoundGore(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity, std::string direction, std::string nameOfTexture) {
+void SpawnManager::spawnHellHoundGore(sf::Vector2f spawnPosition, sf::Vector2f spawnVelocity, Direction direction, std::string nameOfTexture) {
     std::string name = "GoreHellHound" + std::to_string(id);
     id++;
 
@@ -48,7 +48,7 @@ void SpawnManager::spawnPlatform(sf::Vector2f spawnPosition) {
     insertEntity->getInstance().insertEntity(name,platformTerm);
 }
 
-void SpawnManager::spawnEagOfPlatform(sf::Vector2f spawnPosition, std::string side) {
+void SpawnManager::spawnEagOfPlatform(sf::Vector2f spawnPosition, Direction side) {
     std::string name = "XlatformEag" + std::to_string(id);
     id++;
 

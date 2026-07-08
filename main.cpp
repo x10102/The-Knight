@@ -7,6 +7,8 @@
 #include "Game/Managers/DrawManager.h"
 #include "Game/Managers/EnvironmenAndPhysicsManager.h"
 
+#include <iostream>
+
 
 int main() {
 
@@ -27,7 +29,6 @@ int main() {
 
     sf::RenderWindow window(sf::VideoMode(1600, 1200), "The Knight");
 
-
     while (window.isOpen()) {
         if (GameManager::getInstance().tickClock.getElapsedTime().asMilliseconds() >= GameManager::getInstance().timeInFrames) {
             GameManager::getInstance().addToTicksMade();
@@ -35,8 +36,9 @@ int main() {
             sf::Event event;
 
             while (window.pollEvent(event)) {
-                if (event.type == sf::Event::Closed)
+                if (event.type == sf::Event::Closed) {
                     window.close();
+                }
             }
 
             window.clear();

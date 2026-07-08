@@ -61,7 +61,6 @@ void Entity::transformationSprite(std::string currentTexture) {
 }
 
 void Entity::insertSoulInToAbsortionFeeld(Soul *soulToInsert) {
-  std::cout << soulToInsert->name <<  std::endl;
   absorbedSouls.insert(absorbedSouls.begin(), soulToInsert);
 }
 
@@ -101,7 +100,7 @@ void Entity::passivActionStandStill() {};
 
 void Entity::passivActionFalling() {};
 void Entity::passivActionBetwenFalling() {};
-void Entity::passivActionGetHit(std::string fecingDirection, int curentAttackDamage) {};
+void Entity::passivActionGetHit(Direction fecingDirection, int curentAttackDamage) {};
 
 void Entity::movmentUpdate() {};
 void Entity::hitBoxUpdateposition() {};
